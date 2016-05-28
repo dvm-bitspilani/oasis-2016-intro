@@ -35,11 +35,11 @@ body{
 	height: 80vh;
 	width:107.6vh;
 	margin-top: 5vh;
-  -webkit-transition:margin-left 0.4s ease-in-out;
-  -moz-transition:margin-left 0.4s ease-in-out;
-  -o-transition:margin-left 0.4s ease-in-out;
-  -ms-transition:margin-left 0.4s ease-in-out;
-  transition:margin-left 0.4s ease-in-out;
+	-webkit-transition:margin-left 0.4s ease-in-out;
+	-moz-transition:margin-left 0.4s ease-in-out;
+	-o-transition:margin-left 0.4s ease-in-out;
+	-ms-transition:margin-left 0.4s ease-in-out;
+	transition:margin-left 0.4s ease-in-out;
 }
 }
 #magazine .turn-page{
@@ -75,10 +75,10 @@ body{
 .pbox{
 	height: 10vh;
 	width:100%;
-	    margin-top: 3vh;
-	 display: flex;
- 	 flex-direction: column;
-  	justify-content: center;
+	margin-top: 3vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 #bar{
@@ -114,57 +114,38 @@ body{
 	background-size:53.8vh 80vh;
 }	
 #last{
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }
 #lasti{
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }
 
-#path-1{
+path{
 
-	stroke-dasharray: 4720;
-	stroke-dashoffset:0;
-
-
-	animation: dash 5s linear;
-}
-
-#path-2{
-	
 	stroke-dasharray: 4720;
 	stroke-dashoffset:0;
 	animation: dash 5s linear;
 }
 
 @keyframes dash{
-    from{
+	from{
 
-    	stroke-dashoffset:4720;
-    }
+		stroke-dashoffset:4720;
+	}
 	to {
-         stroke-dashoffset: 0;
+		stroke-dashoffset: 0;
 
 	}
-}
-@keyframes glow{
-
-    from{
-    	stroke:"#fff0a0";
-    }
-    to{
-    	stroke:"#000000";
-    }
-  
 }
 
 #magazine .depth{
@@ -196,4 +177,21 @@ body{
 	margin-top: -10vh;
 	background-image:url(../img/glow.png);
 	background-size:17.714vh 20vh;
-}		
+}
+
+.tHead{
+	position: relative;
+	top: 15%;
+	font-weight: bold;
+	font-size: 1.5em;
+	max-width: 70%;
+	margin:auto;
+}
+
+.tBody {
+	position: relative;
+	max-width: 70%;
+	text-align: justify;
+	top: 20%;
+	margin: auto;
+}
