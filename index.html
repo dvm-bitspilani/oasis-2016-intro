@@ -4,9 +4,6 @@
 	<script src="./js/jquery.min.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/turn-min.js"></script>
-	<script src="./js/fix.js"></script>	
-	<script src="./js/flipclock.min.js"></script>
-	<link rel="stylesheet" href="./css/flipclock.css">
 </head>
 <body>
 
@@ -74,13 +71,6 @@
 		</div>	
 		
 	</div>
-	<div class="pbox">
-		<div id="bar">
-			<div id="clock">
-			</div>
-		</div>
-	</div>	
-
 </div>
 <div id="s_box">
 	<div class="social_strip">
@@ -167,6 +157,12 @@
 		
 	});
 
+
+	function isChrome() {
+
+		return navigator.userAgent.indexOf('Chrome')!=-1;
+
+	}
 </script>
 </body>
 </html>
