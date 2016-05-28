@@ -48,9 +48,9 @@ body{
 }
 
 .social_strip{
-	position:relative;
+	position:absolute;
 	width: 10vh;
-	height: 100%;
+	height: 97%;
 	display: flex;
 	flex-direction:column;
 	justify-content:flex-end;
@@ -97,7 +97,7 @@ body{
 	position: relative;
 	height: 100%;
 	float: right;
-	padding: 1vh;
+	margin-right: 2vh;
 	width: 8vh;
 
 }

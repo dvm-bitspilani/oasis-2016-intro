@@ -106,9 +106,11 @@
 		else
 			$('#magazine .p13 .depth').css({width: 0});
 
-	}
+	};
 
-	$('.mascot').click(function(){$(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); });
+
+
+	window.onload=function(){$(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(3000); };
 
 	$('#magazine').turn({
 		elevation: 50,
@@ -162,7 +164,9 @@
 
 		return navigator.userAgent.indexOf('Chrome')!=-1;
 
-	}
+	};
+
+	// $(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); };
 </script>
 </body>
 </html>
