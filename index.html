@@ -4,13 +4,15 @@
 	<script src="./js/jquery.min.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/turn-min.js"></script>
+	<script src="./js/hash.js"></script>
 </head>
 <body>
 
 	<div class="center">
-		
+
 		<div id="book_box">
 			<div id="magazine">
+				<div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div>
 				<div style="background-image:url(img/extraBevel.jpg);" class="hard out">
 					<div class="mascot"></div>
 					<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -49,27 +51,27 @@
 					c4.017,17.286,7.229,54.271-17.27,83.217c-24.5,28.945-72.407,50.529-45.053,112.766c13.947,31.734,47.933,28.312,51.556,30.728
 					c0,0-16.301,93.627-73.657,121.414c0,0,16.171,13.03,4.2,33.181c-11.971,20.152-34.329,14.458-29.422,73.372
 					c0,0,25.003-56.314,85.369-35.172c0,0-27.895,36.717-8.253,70.813C407.2,695.281,421.061,694.082,425.105,695.815z"/>
-				</svg>	
+				</svg>
 
 			</div>
 			<div  class="hard out" style="background-image:url(img/C2.jpg);"><div class="depth" id="ld"></div></div>
-			<div  class="in_page own-size"><div style="background-image:url(img/COVER.jpg);" class="page_content"></div></div>								
+			<div  class="in_page own-size"><div style="background-image:url(img/COVER.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page01-part1.jpg);" class="page_content">
 				<div class="tHead">Lorem Ipsum</div>
 				<div class="tBody">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</div>
 			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page01-part2.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>
-			<div  class="in_page own-size "><div id="lasti" style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>		
+			<div  class="in_page own-size "><div style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part2.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part2.jpg);" class="page_content"></div></div>
-			<div  class="in_page own-size"><div style="background-image:url(img/page2.jpg);" class="page_content"></div></div>			
-			<div  class="hard fixed out" style="background-image:url(img/C2.jpg);" id="last"><div class="depth" id="rd"></div></div>				
+			<div  class="in_page own-size"><div style="background-image:url(img/page2.jpg);" class="page_content"></div></div>
+			<div  class="hard fixed out" style="background-image:url(img/C2.jpg);" id="last"><div class="depth" id="rd"></div></div>
 			<div  class="hard out" style="background-image:url(img/temporaryBackCover.jpg);"><div ></div></div>
-		</div>	
-		
+		</div>
+
 	</div>
 	<div class="pbox">
 		<div class="ctime" id="month">hello2</div>
@@ -84,10 +86,43 @@
 	<div class="social_strip">
 		<img src="img/sfb.png" class="s_icons" />
 		<img src="img/stwi.png" class="s_icons" />
-		<img src="img/syou.png" class="s_icons" />		
+		<img src="img/syou.png" class="s_icons" />
 	</div>
-</div>	
+</div>
 <script type="text/javascript">
+
+
+function updateTabs() {
+
+var tabs = {5: 'Page 5', 7:'Page 7'},
+	left = [],
+	right = [],
+	book = $('#magazine'),
+	actualPage = book.turn('page'),
+	view = book.turn('view');
+
+for (var page in tabs) {
+	var isHere = $.inArray(parseInt(page, 4), view)!=-1;
+
+	if (page>actualPage && !isHere)
+		right.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
+	else if (isHere) {
+
+		if (page%2===0)
+			left.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
+		else
+			right.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
+	} else
+		left.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
+
+}
+
+$('#magazine .tabs .left').html(left.join(''));
+$('#magazine .tabs .right').html(right.join(''));
+
+}
+
+
 	function updateDepth(book, newPage) {
 
 		var page = book.turn('page'),
@@ -124,14 +159,23 @@
 		elevation: 50,
 		acceleration: !isChrome(),
 		autoCenter: true,
+		pages: 14,
 		duration: 1500,
 		when: {
 
 			turning: function(e, page, view) {
-				
+
 				var book = $(this),
 				currentPage = book.turn('page'),
 				pages = book.turn('pages');
+
+				Hash.go('page/'+page).update();
+				if (page==1 || page==pages)
+								$('#magazine .tabs').hide();
+								if (page!=1 && page!=book.turn('pages'))
+							$('#magazine .tabs').fadeIn(100);
+						else
+							$('#magazine .tabs').hide();
 
 				updateDepth(book, page);
 				if (page>=2)
@@ -145,26 +189,53 @@
 					$('.p13').removeClass('fixed');
 
 
-				
+
+
+			},
+
+
+			turned: function(e, page, view) {
+
+				updateTabs();
 			}
 		}
 	});
-	
-	
+
+
+	Hash.on('^page\/([0-9]*)$', {
+			yep: function(path, parts) {
+				var page = parts[1];
+
+				if (page!==undefined) {
+					if ($('#magazine').turn('is'))
+						$('#magazine').turn('page', page);
+				}
+
+			},
+			nop: function(path) {
+
+				if ($('#magazine').turn('is'))
+					$('#magazine').turn('page', 1);
+			}
+		});
+
+
+
+
 	$(window).bind('keydown', function(e){
-		
+
 		if (e.keyCode==37)
 			$('#magazine').turn('previous');
 		else if (e.keyCode==39)
 			$('#magazine').turn('next');
 		$('path').css({animation: 'none'});
-		
+
 	});
 
 	$("#flipbook").bind("first", function(event, page, view) {
 
 		console.log('page 1');
-		
+
 	});
 
 
@@ -173,6 +244,9 @@
 		return navigator.userAgent.indexOf('Chrome')!=-1;
 
 	};
+
+
+
 
 	// Month picker
 
