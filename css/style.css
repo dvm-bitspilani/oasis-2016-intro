@@ -285,6 +285,11 @@ path{
 	font-size: 1.5em;
 }
 
+.tBody a{
+  text-decoration: none;
+  color: #362609;
+}
+
 .textras {
 	/*position: relative;*/
 	display: flex;
