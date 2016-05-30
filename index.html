@@ -60,7 +60,7 @@
 			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page01-part2.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>
-			<div  class="in_page own-size "><div id="lasti" style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>				
+			<div  class="in_page own-size "><div id="lasti" style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>		
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part2.jpg);" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1.jpg);" class="page_content"></div></div>
@@ -71,12 +71,20 @@
 		</div>	
 		
 	</div>
+	<div class="pbox">
+		<div class="ctime" id="month">hello2</div>
+		<div id="bar">
+		<div id="bar2"></div>
+		</div>
+		<div ><img class="logo" src="img/glow.png"></div>
+	</div>
 </div>
+
 <div id="s_box">
 	<div class="social_strip">
-		<div style="background-image:url(img/sfb.png);" class="s_icons"></div>
-		<div style="background-image:url(img/stwi.png);" class="s_icons"></div>
-		<div style="background-image:url(img/syou.png);" class="s_icons"></div>		
+		<img src="img/sfb.png" class="s_icons" />
+		<img src="img/stwi.png" class="s_icons" />
+		<img src="img/syou.png" class="s_icons" />		
 	</div>
 </div>	
 <script type="text/javascript">
@@ -166,6 +174,21 @@
 
 	};
 
+	// Month picker
+
+	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var d = new Date();
+
+	$('#month').html(monthNames[d.getMonth()]);
+
+
+	// Progress Bar Width
+	var compdate= new Date("2016-05-01")
+	var oasisdate= new Date("2016-10-19");
+	var width = 100-(oasisdate-d)/(oasisdate-compdate)*100;
+	width = String(width)+'%';
+	console.log(width);
+	$('#bar2').css('width', width);
 	// $(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); };
 </script>
 </body>
