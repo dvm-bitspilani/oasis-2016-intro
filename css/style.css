@@ -372,3 +372,12 @@ path{
 	-webkit-border-image: url(../img/tab-hover.png) 5 20 5 20 repeat stretch;
 
 }
+
+
+#space {
+  position: absolute;
+	top: 0;
+	left: 0;
+  z-index: -10;
+  background: #000000;
+}
