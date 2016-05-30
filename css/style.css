@@ -1,6 +1,6 @@
 @font-face {
-   font-family: 'Harry P';
-   src: url(HARRYP__.TTF);
+	font-family: 'Harry P';
+	src: url(HARRYP__.TTF);
 }
 
 html{
@@ -308,11 +308,16 @@ path{
 	height: 2vh;
 }
 
-.logo {
+.slogo {
 	height: 5vh;
 }
 
-
+.logo {
+	width: 10vw;
+	right: 5%;
+	bottom: 5%;
+	position: absolute;
+}
 
 #magazine .tabs{
 	width:100%;
