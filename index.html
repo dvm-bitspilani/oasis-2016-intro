@@ -211,27 +211,26 @@ $('#magazine .tabs .right').html(right.join(''));
 				else
 					$('.p13').removeClass('fixed');
 
+				//responsive for small screens
+
 				if($(window).width() < 694)
 				{
 					if(page==1){
 
-						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) +
-						$(window).scrollLeft()  + "px");
-						$('#magazine').css("left","");
+						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("left","0");
 					}
 
 					else if(page==14){
 
-						$('#magazine').css("right",(($(window).width() - 1.5*$(this).outerWidth()) / 2) +
-						$(window).scrollLeft()  + "px");
-						$('#magazine').css("left","");
+						$('#magazine').css("right",(($(window).width() - 1.5*$(this).outerWidth()) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("left","0");
 					}
 
 
 					else  {
-						$('#magazine').css("right","");
-						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) +
-						$(window).scrollLeft()  + "px");
+						$('#magazine').css("right","0");
+						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
 					}
 				}
 
@@ -316,23 +315,26 @@ $('#magazine .tabs .right').html(right.join(''));
 	// $(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); };
 
 
-jQuery.fn.center = function () {
-    this.css("position","absolute");
-		//
-    // this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
-    //                                             $(window).scrollTop()) + "px");
 
-		if($(window).width() > 694)
-    this.css("left", (($(window).width() - $(this).outerWidth()) / 2) +
-                                                $(window).scrollLeft() + "px");
-		else
-			this.css("right",(($(window).width() - ($(this).outerWidth()/2)) / 2) +
-																									$(window).scrollLeft() + "px");
+//initial center magazine 
+(function(){
 
-    return this;
-}
+	$('#magazine').css("position","absolute");
+	//
+	// $('#magazine').css("top", Math.max(0, (($(window).height() - $($('#magazine')).outerHeight()) / 2) +
+	//                                             $(window).scrollTop()) + "px");
 
-$('#magazine').center();
+	if($(window).width() > 694)
+	{
+		$('#magazine').css("left", (($(window).width() - $('#magazine').outerWidth()) / 2) + $(window).scrollLeft() + "px");
+		$('#magazine').addClass('bigScreenTransition');
+	}
+	else{
+		$('#magazine').css("right",(($(window).width() - ($('#magazine').outerWidth()/2)) / 2) + $(window).scrollLeft() + "px");
+		$('#magazine').addClass('smlScreenTransition');
+	}
+
+})();
 
 </script>
 </body>
