@@ -126,11 +126,11 @@ body{
 	height: 80vh;
 	width:108vh;
 	margin-top: 5vh;
-	-webkit-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
-	-moz-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
-	-o-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
-	-ms-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
-	transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
+	-webkit-transition:left 0.4s ,right 0.4s;
+	-moz-transition:left 0.4s ,right 0.4s;
+	-o-transition:left 0.4s ,right 0.4s;
+	-ms-transition:left 0.4s ,right 0.4s;
+	transition:left 0.4s ,right 0.4s;
 
 }
 #magazine .turn-page{

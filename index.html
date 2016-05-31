@@ -213,17 +213,24 @@ $('#magazine .tabs .right').html(right.join(''));
 
 				if($(window).width() < 694)
 				{
-					if(page==14){
+					if(page==1){
 
-						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()) / 2) +
+						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) +
 						$(window).scrollLeft()  + "px");
-						// $('#magazine').css("right","0px");
+						$('#magazine').css("left","");
+					}
+
+					else if(page==14){
+
+						$('#magazine').css("right",(($(window).width() - 1.5*$(this).outerWidth()) / 2) +
+						$(window).scrollLeft()  + "px");
+						$('#magazine').css("left","");
 					}
 
 
 					else  {
-						$('#magazine').css("left","initial");
-						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) +
+						$('#magazine').css("right","");
+						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) +
 						$(window).scrollLeft()  + "px");
 					}
 				}
