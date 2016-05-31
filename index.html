@@ -210,23 +210,22 @@ $('#magazine .tabs .right').html(right.join(''));
 				else
 					$('.p13').removeClass('fixed');
 
-					console.log(page,currentPage);
-				if(page==14 && $(window).width() < 694){
+				if($(window).width() < 694)
+				{
+					if(page==14){
 
-				  $('#magazine').css("left",(($(window).width() - $(this).outerWidth()) / 2) +
-			                                                $(window).scrollLeft()  + "px");
-					// $('#magazine').css("right","0px");
+						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()) / 2) +
+						$(window).scrollLeft()  + "px");
+						// $('#magazine').css("right","0px");
 					}
 
 
-				else {
-				 $('#magazine').css("left","initial");
-
-
-					$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) +
-			                                                $(window).scrollLeft()  + "px");
+					else  {
+						$('#magazine').css("left","initial");
+						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) +
+						$(window).scrollLeft()  + "px");
+					}
 				}
-
 
 			},
 
