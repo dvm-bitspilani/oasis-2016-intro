@@ -205,7 +205,7 @@ body{
 	right: 0;
 	margin-right: 2vh;
 	width: 8vh;
-
+	z-index: 35;
 }
 
 .page_content{
