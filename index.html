@@ -3,7 +3,7 @@
 <head>
 	<script src="./js/jquery.min.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
-	<script src="./js/turn5.0.min.js"></script>
+	<script src="./js/turn-min.js"></script>
 	<script src="./js/hash.js"></script>
 </head>
 <body>
@@ -79,7 +79,7 @@
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="hard fixed out" style="background-image:url(img/C2.jpg);background-repeat:no-repeat;background-position: center;" id="last"><div class="depth" id="rd"></div></div>
-			<div  class="hard out" style="background-image:url(img/temporaryBackCover.jpg);background-repeat:no-repeat;background-position: center;"><div ></div></div>
+			<div  class="hard out backCover" style="background-image:url(img/temporaryBackCover.jpg);background-repeat:no-repeat;background-position: center;"><div ></div></div>
 		</div>
 
 	</div>
@@ -174,19 +174,19 @@ $('#magazine .tabs .right').html(right.join(''));
 	window.onload=function(){$(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(3000); };
 
 
-
+ var globalPage=0;
 
 	$('#magazine').turn({
 		elevation: 50,
 		acceleration: !isChrome(),
 		autoCenter: true,
 		pages: 14,
-		display: window.innerWidth > 675 ? "double" : "single",
+		// display: window.innerWidth > 675 ? "double" : "single",
 		duration: 1500,
 		when: {
 
 			turning: function(e, page, view) {
-
+				globalPage=0;
 				var book = $(this),
 				currentPage = book.turn('page'),
 				pages = book.turn('pages');
@@ -210,7 +210,22 @@ $('#magazine .tabs .right').html(right.join(''));
 				else
 					$('.p13').removeClass('fixed');
 
+					console.log(page,currentPage);
+				if(page==14 && $(window).width() < 694){
 
+				  $('#magazine').css("left",(($(window).width() - $(this).outerWidth()) / 2) +
+			                                                $(window).scrollLeft()  + "px");
+					// $('#magazine').css("right","0px");
+					}
+
+
+				else {
+				 $('#magazine').css("left","initial");
+
+
+					$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) +
+			                                                $(window).scrollLeft()  + "px");
+				}
 
 
 			},
@@ -292,6 +307,26 @@ $('#magazine .tabs .right').html(right.join(''));
 	var daysRem =  Math.floor(( Date.parse(oasisdate) - Date.parse(d) ) / 86400000);
 	$('#days span').html(daysRem);
 	// $(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); };
+
+
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+		//
+    // this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+    //                                             $(window).scrollTop()) + "px");
+
+		if($(window).width() > 694)
+    this.css("left", (($(window).width() - $(this).outerWidth()) / 2) +
+                                                $(window).scrollLeft() + "px");
+		else
+			this.css("right",(($(window).width() - ($(this).outerWidth()/2)) / 2) +
+																									$(window).scrollLeft() + "px");
+
+    return this;
+}
+
+$('#magazine').center();
+
 </script>
 </body>
 </html>

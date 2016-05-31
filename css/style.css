@@ -97,26 +97,32 @@ body{
 
 
 .center{
-	/*height:100vh;*/
-	/*width:50vw;*/
+	width:50vw;
 	margin:auto;
 	margin-top:3vh;
 }
+/*
+@media screen and (max-width: 694px) {
+	.center {
+		width: 95vw;
+	}
+
+}*/
 
 #magazine{
 	position: relative;
 	height: 80vh;
 	width:108vh;
 	margin-top: 5vh;
-	-webkit-transition:margin-left 0.4s ease-in-out;
-	-moz-transition:margin-left 0.4s ease-in-out;
-	-o-transition:margin-left 0.4s ease-in-out;
-	-ms-transition:margin-left 0.4s ease-in-out;
-	transition:margin-left 0.4s ease-in-out;
+	-webkit-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
+	-moz-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
+	-o-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
+	-ms-transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
+	transition:margin-left 0.4s ease-in-out , left 0.4s ease-in-out;
 
 }
 #magazine .turn-page{
-	background-color:#ccc;
+	background-color:#fff;
 	background-size:100% 100%;
 }
 
@@ -133,6 +139,14 @@ body{
 
 	width: 100%;
 	height:76vh;
+}
+
+.backCover{
+	-webkit-transition:left 0.4s ease-in-out;
+	-moz-transition:left 0.4s ease-in-out;
+	-o-transition:left 0.4s ease-in-out;
+	-ms-transition:left 0.4s ease-in-out;
+	transition:left 0.4s ease-in-out;
 }
 
 .s_icons{
