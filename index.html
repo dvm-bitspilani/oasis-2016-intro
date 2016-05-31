@@ -5,12 +5,10 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/turn-min.js"></script>
 	<script src="./js/hash.js"></script>
-	<script src="./js/index.js"></script>
 </head>
 <body>
-	<canvas id="space"></canvas>
-	<!-- <div class="stars"></div>
-  <div class="twinkling"></div> -->
+	<div class="stars"></div>
+  <div class="twinkling"></div>
 	<div class="center">
 
 		<div id="book_box">
@@ -86,11 +84,16 @@
 
 	</div>
 	<div class="pbox">
-		<div class="ctime" id="month">hello2</div>
-		<div id="bar">
-		<div id="bar2"></div>
+		<div class = "row">
+			<div class="ctime" id="month">hello2</div>
+			<div id="bar">
+			<div id="bar2"></div>
+			</div>
+			<div ><img class="slogo" src="img/glow.png"></div>
 		</div>
-		<div ><img class="slogo" src="img/glow.png"></div>
+		<div class="row">
+			<div class="ctime" id="days"> <span>140</span> days remaining</div>
+		</div>
 	</div>
 </div>
 
@@ -269,12 +272,15 @@ $('#magazine .tabs .right').html(right.join(''));
 
 
 	// Progress Bar Width
-	var compdate= new Date("2016-05-01")
+	var compdate= new Date("2016-05-01");
 	var oasisdate= new Date("2016-10-19");
 	var width = 100-(oasisdate-d)/(oasisdate-compdate)*100;
 	width = String(width)+'%';
-	console.log(width);
 	$('#bar2').css('width', width);
+
+	//Days remaining
+	var daysRem =  Math.floor(( Date.parse(oasisdate) - Date.parse(d) ) / 86400000);
+	$('#days span').html(daysRem);
 	// $(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); };
 </script>
 </body>
