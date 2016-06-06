@@ -4,6 +4,7 @@
 	<script src="./js/jquery.min.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/turn-min.js"></script>
+	<!-- <script src="./js/jgestures.min.js"></script> -->
 	<script src="./js/hash.js"></script>
 </head>
 <body>
@@ -12,9 +13,10 @@
 	<div class="clouds"></div>
 	<div class="center">
 
+
 		<div id="book_box">
 			<div id="magazine">
-				<div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div>
+				<!-- <div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div> -->
 				<div style="background-image:url(img/extraBevel.jpg);background-repeat:no-repeat;background-position: center;" class="hard out">
 					<div class="mascot"></div>
 					<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -56,7 +58,17 @@
 				</svg>
 
 			</div>
-			<div  class="hard out" style="background-image:url(img/C2.jpg);"><div class="depth" id="ld"></div></div>
+			<div  class="hard out" style="background-image:url(img/C2.jpg);">
+				<div class="instructions">
+					<div class="inner">
+						<div class="title">Tips</div>
+						<div class="content">Use arrow keys in your keyboard to turn the page</div>
+						<div class="content">Hold the left mouse button at the corners to turn the page</div>
+						<div class="content">Press the number on keyboard corresponding to the starting page number of the content</div>
+					</div>
+				</div>
+				<div class="depth" id="ld"> </div>
+			</div>
 			<div  class="in_page own-size"><div style="background-image:url(img/COVER.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
 				<div class="tHead">Content</div>
 				<div class="textras">
@@ -85,6 +97,7 @@
 
 	</div>
 </div>
+
 
 <div id="pboxOuter">
 	<div class="pbox">
@@ -177,11 +190,13 @@ $('#magazine .tabs .right').html(right.join(''));
 
  var globalPage=0;
 
+	//config
 	$('#magazine').turn({
 		elevation: 50,
 		acceleration: !isChrome(),
 		autoCenter: true,
 		pages: 14,
+		gradients: true,
 		// display: window.innerWidth > 675 ? "double" : "single",
 		duration: 1500,
 		when: {
@@ -193,12 +208,12 @@ $('#magazine .tabs .right').html(right.join(''));
 				pages = book.turn('pages');
 
 				Hash.go('page/'+page).update();
-				if (page==1 || page==pages)
-								$('#magazine .tabs').hide();
-								if (page!=1 && page!=book.turn('pages'))
-							$('#magazine .tabs').fadeIn(100);
-						else
-							$('#magazine .tabs').hide();
+				// if (page==1 || page==pages)
+				// 				$('#magazine .tabs').hide();
+				// 				if (page!=1 && page!=book.turn('pages'))
+				// 			$('#magazine .tabs').fadeIn(100);
+				// 		else
+				// 			$('#magazine .tabs').hide();
 
 				updateDepth(book, page);
 				if (page>=2)
@@ -265,6 +280,8 @@ $('#magazine .tabs .right').html(right.join(''));
 			}
 		});
 
+  var i = 3
+
 
 
 
@@ -274,15 +291,26 @@ $('#magazine .tabs .right').html(right.join(''));
 			$('#magazine').turn('previous');
 		else if (e.keyCode==39)
 			$('#magazine').turn('next');
+		else if(e.keyCode >= 49 && e.keyCode <= 57 ){
+						$('.p1').addClass('hard');
+					$('#magazine').turn('page', e.keyCode-48);
+				}
 		$('path').css({animation: 'none'});
 
 	});
 
-	$("#flipbook").bind("first", function(event, page, view) {
-
-		console.log('page 1');
-
-	});
+// 	$(window).bind("swipeone swipeleft", function(event) {
+// 	$("#flipbook").turn("next");
+// });
+//
+// $(window).bind("swipeone swiperight", function(event) {
+// 	$("#flipbook").turn("previous");
+// });
+// 	$("#flipbook").bind("first", function(event, page, view) {
+//
+// 		console.log('page 1');
+//
+// 	});
 
 
 	function isChrome() {
@@ -316,7 +344,7 @@ $('#magazine .tabs .right').html(right.join(''));
 
 
 
-//initial center magazine 
+//initial center magazine
 (function(){
 
 	$('#magazine').css("position","absolute");

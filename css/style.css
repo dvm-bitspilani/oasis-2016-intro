@@ -126,7 +126,6 @@ body{
 	height: 80vh;
 	width:108vh;
 	margin-top: 5vh;
-
 }
 
 .bigScreenTransition {
@@ -444,4 +443,33 @@ path{
 	left: 0;
   z-index: -10;
   background: #000000;
+}
+
+.instructions{
+	color: #C9A364;
+	width: 45%;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inner{
+	margin: auto 18px;
+}
+
+.title,.content{
+	font-family: 'CynthoPro-Regular',sans-serif;
+	text-align: left;
+}
+
+.title{
+	margin:3px 0 22px 0;
+}
+
+.content{
+	font-size: 0.62em;
+  margin: 18px 0;
 }
