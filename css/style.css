@@ -473,3 +473,16 @@ path{
 	font-size: 0.62em;
   margin: 18px 0;
 }
+
+
+#logoMain{
+	position: absolute;
+	bottom:20px;
+	left:20px;
+}
+
+#logoMain img{
+	width:255px;
+	filter: brightness(2.8);
+	-webkit-filter: brightness(2.8);
+}
