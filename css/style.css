@@ -182,10 +182,10 @@ body{
 #book_box{
 
 }
-#pboxOuter{
+#footer{
 	margin: auto;
 	position: absolute;
-	bottom: 0;
+	bottom: 4px;
 	left:0;
 	width:100vw;
 
@@ -195,8 +195,9 @@ body{
 	height: 10vh;
 	width:50%;
 	color:#FFF;
-	margin: 7px auto;
-	display: block;
+	/*margin: 7px auto;*/
+	display: inline-block;
+	float: left;
 	align-items: center;
 }
 
@@ -238,11 +239,10 @@ body{
 }
 
 #s_box{
-	position: absolute;;
 	height: 100%;
-	right: 0;
 	margin-right: 2vh;
 	width: 8vh;
+	float: right;
 	z-index: 35;
 }
 
@@ -476,13 +476,20 @@ path{
 
 
 #logoMain{
-	position: absolute;
-	bottom:20px;
-	left:20px;
+	position: relative;
+	width:25%;
+	float: left;
+    display: inline-block;
 }
 
 #logoMain img{
-	width:255px;
+	width:65%;
 	filter: brightness(2.8);
 	-webkit-filter: brightness(2.8);
+}
+
+@media screen and (max-width:760px){
+	#logoMain img{
+		width:85%;
+	}
 }
