@@ -6,6 +6,8 @@
 	<script src="./js/turn-min.js"></script>
 	<!-- <script src="./js/jgestures.min.js"></script> -->
 	<script src="./js/hash.js"></script>
+	<title>OASIS 2016 | OF GODS AND MEN | BITS Pilani</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div class="stars"></div>
@@ -76,7 +78,14 @@
 				<div class="hrule"></div>
 				<img class="star" src="img/star.png">
 				</div>
-				<div class="tBody"><br><a href="#page/4">About Oasis..................4-6</a><br><br><a href="#page/6">Contacts.......................6-7</a><br><br><a href="#page/8">Sponsors.......................8-8</a></div>
+				<div class="tBody">
+					<br>
+					<a href="#page/4"><p><span class="description">About Oasis</span><span class="dots">...........................................................................................</span><span class="pNo">4-6</span></p></a>
+					<br><br>
+					<a href="#page/6"><p><span class="description">Contacts</span><span class="dots">...........................................................................................</span><span class="pNo">6-7</span></p></a>
+					<br><br>
+					<a href="#page/8"><p><span class="description">Sponsors</span><span class="dots">...........................................................................................</span><span class="pNo">8-8</span></p></a>
+				</div>
 				<img class="logo" src="img/logo.png" />
 			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page01-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
@@ -369,6 +378,23 @@ $('#magazine .tabs .right').html(right.join(''));
 	}
 
 })();
+
+
+//dots filler in content page
+
+setTimeout(function(){
+	$('.tBody a p').each(function(index,element){
+		var paraWidth=$(element).width();
+		var descWidth=$(element).children('.description').outerWidth();
+		var pNoWidth=$(element).children('.pNo').width();
+		var $dots=$(element).children('.dots');
+		var dotsWidth=paraWidth-(descWidth+pNoWidth+2);
+		$dots.width(dotsWidth+"px");
+	});
+	$('.description').each(function(i,ele){ console.log($(ele).width()); });
+
+},1);
+
 
 </script>
 </body>
