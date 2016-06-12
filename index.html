@@ -12,12 +12,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="stars"></div>
-  <div class="twinkling"></div>
-	<div class="clouds"></div>
+<div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+
+<div class="outborder"></div>
+
+<div class="inborder"></div>
+
+
 	<div class="center">
-
-
 		<div id="book_box">
 			<div id="magazine">
 				<!-- <div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div> -->
@@ -76,9 +81,9 @@
 			<div  class="in_page own-size"><div style="background-image:url(img/COVER.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
 				<div class="tHead">Content</div>
 				<div class="textras">
-				<img class="star" src="img/star.png">
-				<div class="hrule"></div>
-				<img class="star" src="img/star.png">
+					<img class="star" src="img/star.png">
+					<div class="hrule"></div>
+					<img class="star" src="img/star.png">
 				</div>
 				<div class="tBody">
 					<br>
@@ -105,72 +110,97 @@
 			<div  class="hard fixed out" style="background-image:url(img/C2.jpg);background-repeat:no-repeat;background-position: center;" id="last"><div class="depth" id="rd"></div></div>
 			<div  class="hard out backCover" style="background-image:url(img/temporaryBackCover.jpg);background-repeat:no-repeat;background-position: center;"><div ></div></div>
 		</div>
-
 	</div>
 </div>
 
 
+<div id="logoMain">
+		<img src="img/logo.png" alt="">
+</div>
 
+<div id="leftlady">
+	<embed src="img/left-lady.svg" >
+</div>
+
+<div id="compass">
+	<embed src="img/compass.svg" >
+</div>
+
+<div id="rightman">
+	<embed src="img/right-man.svg" >
+</div>
 
 <div id="footer">
-	<div id="logoMain">
-		<img src="img/logo.png" alt="">
-	</div>
-	<div class="pbox">
+	
+	<!-- <div class="pbox">
 		<div class = "row">
 			<div class="ctime" id="month">hello2</div>
 			<div id="bar">
-			<div id="bar2"></div>
+				<div id="bar2"></div>
 			</div>
 			<div ><img class="slogo" src="img/glow.png"></div>
 		</div>
 		<div class="row">
 			<div class="ctime" id="days"> <span>140</span> days remaining</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 
-<div id="s_box">
+<!-- <div id="s_box">
 	<div class="social_strip">
 		<a href="https://www.facebook.com/oasis.bitspilani" target="_blank"><img src="img/sfb.png" class="s_icons" /></a>
 		<a href="https://www.twitter.com/bitsoasis" target="_blank"><img src="img/stwi.png" class="s_icons" /></a>
 		<a href="http://www.youtube.com/user/OasisBITS" target="_blank"><img src="img/syou.png" class="s_icons" /></a>
 	</div>
-</div>
+</div> -->
 
 <script type="text/javascript">
 
+//Border Size Calc
 
-function updateTabs() {
+var bWidth=$(window).width()-30;
+var bHeight=$(window).height()-30;
 
-var tabs = {5: 'Page 5', 7:'Page 7'},
-	left = [],
-	right = [],
-	book = $('#magazine'),
-	actualPage = book.turn('page'),
-	view = book.turn('view');
+console.log(bWidth);
 
-for (var page in tabs) {
-	var isHere = $.inArray(parseInt(page, 4), view)!=-1;
+$(".outborder").css('width', bWidth);
+$(".outborder").css('height', bHeight);
 
-	if (page>actualPage && !isHere)
-		right.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
-	else if (isHere) {
+$(".inborder").css('width', bWidth-30);
+$(".inborder").css('height', bHeight-30);
 
-		if (page%2===0)
-			left.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
-		else
-			right.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
-	} else
-		left.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
 
-}
 
-$('#magazine .tabs .left').html(left.join(''));
-$('#magazine .tabs .right').html(right.join(''));
+	function updateTabs() {
 
-}
+		var tabs = {5: 'Page 5', 7:'Page 7'},
+		left = [],
+		right = [],
+		book = $('#magazine'),
+		actualPage = book.turn('page'),
+		view = book.turn('view');
+
+		for (var page in tabs) {
+			var isHere = $.inArray(parseInt(page, 4), view)!=-1;
+
+			if (page>actualPage && !isHere)
+				right.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
+			else if (isHere) {
+
+				if (page%2===0)
+					left.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
+				else
+					right.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
+			} else
+			left.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
+
+		}
+
+		$('#magazine .tabs .left').html(left.join(''));
+		$('#magazine .tabs .right').html(right.join(''));
+
+	}
 
 
 	function updateDepth(book, newPage) {
@@ -206,7 +236,7 @@ $('#magazine .tabs .right').html(right.join(''));
 	window.onload=function(){$(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(3000); };
 
 
- var globalPage=0;
+	var globalPage=0;
 
 	//config
 	$('#magazine').turn({
@@ -282,23 +312,23 @@ $('#magazine .tabs .right').html(right.join(''));
 
 
 	Hash.on('^page\/([0-9]*)$', {
-			yep: function(path, parts) {
-				var page = parts[1];
+		yep: function(path, parts) {
+			var page = parts[1];
 
-				if (page!==undefined) {
-					if ($('#magazine').turn('is'))
-						$('#magazine').turn('page', page);
-				}
-
-			},
-			nop: function(path) {
-
+			if (page!==undefined) {
 				if ($('#magazine').turn('is'))
-					$('#magazine').turn('page', 1);
+					$('#magazine').turn('page', page);
 			}
-		});
 
-  var i = 3
+		},
+		nop: function(path) {
+
+			if ($('#magazine').turn('is'))
+				$('#magazine').turn('page', 1);
+		}
+	});
+
+	var i = 3
 
 
 
@@ -310,9 +340,9 @@ $('#magazine .tabs .right').html(right.join(''));
 		else if (e.keyCode==39)
 			$('#magazine').turn('next');
 		else if(e.keyCode >= 49 && e.keyCode <= 57 ){
-						$('.p1').addClass('hard');
-					$('#magazine').turn('page', e.keyCode-48);
-				}
+			$('.p1').addClass('hard');
+			$('#magazine').turn('page', e.keyCode-48);
+		}
 		$('path').css({animation: 'none'});
 
 	});
@@ -331,11 +361,11 @@ $('#magazine .tabs .right').html(right.join(''));
 // 	});
 
 
-	function isChrome() {
+function isChrome() {
 
-		return navigator.userAgent.indexOf('Chrome')!=-1;
+	return navigator.userAgent.indexOf('Chrome')!=-1;
 
-	};
+};
 
 
 
@@ -394,7 +424,7 @@ setTimeout(function(){
 		var dotsWidth=paraWidth-(descWidth+pNoWidth+2);
 		$dots.width(dotsWidth+"px");
 	});
-	$('.description').each(function(i,ele){ console.log($(ele).width()); });
+	// $('.description').each(function(i,ele){ console.log($(ele).width()); });
 
 },1);
 
