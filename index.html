@@ -133,7 +133,18 @@
 </div>
 
 <div id="compass">
-	<img src="img/compass.svg" >
+	<div class="row">
+		<div id="clock">
+		   	<div id="sec"></div>
+		   	<div id="hour"></div>
+			<div id="min"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="ctime" id="days"> <span></span> days left</div>
+	</div>
+	</div>
+
 </div>
 
 <div id="rightman">
@@ -172,7 +183,6 @@
 var bWidth=$(window).width()-30;
 var bHeight=$(window).height()-30;
 
-console.log(bWidth);
 
 $(".outborder").css('width', bWidth);
 $(".outborder").css('height', bHeight);
@@ -453,6 +463,40 @@ function reloader(){
 }
 
 loader();
+
+
+var sdegree=0,mdegree=0,hdegree=0;
+
+
+// $("#sec").animate(function(){
+//   $("#sec").css({"-moz-transform":"scale(2)","-webkit-transform":"scale(2)"});
+// },1000);
+
+setInterval( function() {
+	sdegree+=(3);
+	var srotate = "rotate(" + sdegree%360 + "deg)";
+
+	$("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+
+}, 900 );
+
+
+setInterval( function() {
+	hdegree+=(3);
+	var hrotate = "rotate(" + hdegree%360 + "deg)";
+
+	$("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
+
+}, 900 );
+
+
+setInterval( function() {
+	mdegree+=(3);
+	var mrotate = "rotate(" + mdegree%360 + "deg)";
+	$("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
+
+}, 900 );
+
 
 </script>
 </body>
