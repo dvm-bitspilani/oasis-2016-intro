@@ -82,7 +82,7 @@ body{
 		}
 		#left { left: 0; }
 		#right { right: 0; }
-		
+
 	#top, #bottom {
 		background: url(../img/bd-top.jpg);
 		left: 0; right: 0;
@@ -512,36 +512,144 @@ path{
 
 #leftlady {
 	position: absolute;
-    bottom: 40px;
-    left: 40px;
+    bottom: 54px;
+    left: 54px;
 }
 
-#leftlady embed {
-	width: 80%;
+#leftlady img {
+	width: 10vw;
 }
 
 #compass {
 	position: absolute;
-	right: 0px;
-	top:45px;
+	right: 40px;
+	top:40px;
 }
 
-#compass embed {
-	width: 50%;
+#compass img {
+	width: 12vw;
 }
 
 #rightman {
 	position: absolute;
-	right: -35px;
-	bottom:45px;
+	right: 40px;
+	bottom:40px;
 }
 
-#rightman embed {
-	width: 60%;
+#rightman img {
+	width: 18vw;
 }
 
 @media screen and (max-width:760px){
 	#logoMain img{
 		width:85%;
 	}
+}
+
+.wrapperCenter{
+	position: relative;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#videoBox{
+	position: relative;
+	width:80%;
+}
+
+#videoBox iframe{
+	display: none;
+	position: relative;
+}
+
+/*.loader{
+	position: absolute;
+	margin: 0 auto;
+	display: block;
+}*/
+
+
+.loader{
+	position: relative;
+	width: 7px;
+	height: 7px;
+	left: 46%;
+	left: calc(50% - 4px);
+		left: -o-calc(50% - 4px);
+		left: -ms-calc(50% - 4px);
+		left: -webkit-calc(50% - 4px);
+		left: -moz-calc(50% - 4px);
+
+	border-radius: 7px;
+	background-color: rgb(0,0,0);
+	transform-origin:	50% 50%;
+		-o-transform-origin:	50% 50%;
+		-ms-transform-origin:	50% 50%;
+		-webkit-transform-origin:	50% 50%;
+		-moz-transform-origin:	50% 50%;
+	animation: loader 1.15s ease-in-out infinite;
+		-o-animation: loader 1.15s ease-in-out infinite;
+		-ms-animation: loader 1.15s ease-in-out infinite;
+		-webkit-animation: loader 1.15s ease-in-out infinite;
+		-moz-animation: loader 1.15s ease-in-out infinite;
+}
+
+.loader:before{
+	content: "";
+	position: absolute;
+	background-color: rgb(0,0,0);
+	top: 0px;
+	left: -16px;
+	height: 7px;
+	width: 7px;
+	border-radius: 7px;
+}
+
+.loader:after{
+	content: "";
+	position: absolute;
+	background-color: rgb(0,0,0);
+	top: 0px;
+	left: 16px;
+	height: 7px;
+	width: 7px;
+	border-radius: 7px;
+}
+
+
+
+
+@keyframes loader{
+		0%{transform:rotate(0deg);}
+		50%{transform:rotate(180deg);}
+		100%{transform:rotate(180deg);}
+}
+
+@-o-keyframes loader{
+		0%{-o-transform:rotate(0deg);}
+		50%{-o-transform:rotate(180deg);}
+		100%{-o-transform:rotate(180deg);}
+}
+
+@-ms-keyframes loader{
+		0%{-ms-transform:rotate(0deg);}
+		50%{-ms-transform:rotate(180deg);}
+		100%{-ms-transform:rotate(180deg);}
+}
+
+@-webkit-keyframes loader{
+		0%{-webkit-transform:rotate(0deg);}
+		50%{-webkit-transform:rotate(180deg);}
+		100%{-webkit-transform:rotate(180deg);}
+}
+
+@-moz-keyframes loader{
+		0%{-moz-transform:rotate(0deg);}
+		50%{-moz-transform:rotate(180deg);}
+		100%{-moz-transform:rotate(180deg);}
 }
