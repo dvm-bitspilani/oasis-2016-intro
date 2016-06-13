@@ -19,7 +19,12 @@
 
 <div class="outborder"></div>
 
-<div class="inborder"></div>
+<div class="inborder">
+	<span class="dashing"><i></i></span>
+ <span class="dashing"><i></i></span>
+ <span class="dashing"><i></i></span>
+ <span class="dashing"><i></i></span>
+</div>
 
 
 	<div class="center">
@@ -190,7 +195,7 @@ $(".outborder").css('height', bHeight);
 $(".inborder").css('width', bWidth-30);
 $(".inborder").css('height', bHeight-30);
 
-
+$(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 
 	function updateTabs() {
 
