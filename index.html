@@ -9,7 +9,7 @@
 	<title>OASIS 2016 | OF GODS AND MEN | BITS Pilani</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
 	<link rel="icon" type="image/png" href="./img/favicon.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable">
 </head>
 <body>
 <div id="left"></div>
@@ -46,12 +46,13 @@
 	</div>
 </div>
 
+<div class="overlay"></div>
 	<div class="center">
 		<div id="book_box">
 			<div id="magazine">
 				<!-- <div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div> -->
-				<div style="background-image:url(img/extraBevel.jpg);background-repeat:no-repeat;background-position: center;" class="hard out">
-					<div class="mascot"></div>
+				<div style="background-image:url(img/cover.png);background-repeat:no-repeat;background-position: center;" class="hard out">
+					<!-- <div class="mascot"></div>
 					<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					width="100%" height="100%" viewBox="0 0 515 767" enable-background="new 0 0 515 767" xml:space="preserve">
 					<path fill-rule="evenodd" id="path-1"  stroke="#fff0a0" stroke-width="4" clip-rule="evenodd" fill="none" d="M88.916,70.794h134.796c0,0-29.165,23.835-14.582,58.699
@@ -88,7 +89,7 @@
 					c4.017,17.286,7.229,54.271-17.27,83.217c-24.5,28.945-72.407,50.529-45.053,112.766c13.947,31.734,47.933,28.312,51.556,30.728
 					c0,0-16.301,93.627-73.657,121.414c0,0,16.171,13.03,4.2,33.181c-11.971,20.152-34.329,14.458-29.422,73.372
 					c0,0,25.003-56.314,85.369-35.172c0,0-27.895,36.717-8.253,70.813C407.2,695.281,421.061,694.082,425.105,695.815z"/>
-				</svg>
+				</svg> -->
 
 			</div>
 			<div  class="hard out " style="background-image:url(img/C2.jpg);">
@@ -301,6 +302,7 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 
 			turning: function(e, page, view) {
 				reloader();
+				$('.overlay').css('opacity','0.45');
 				globalPage=0;
 				var book = $(this),
 				currentPage = book.turn('page'),
@@ -332,27 +334,31 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 				{
 					if(page==1){
 
-						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
-						$('#magazine').css("left","0");
+						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("right","");
 					}
 
 					else if(page==14){
 
-						$('#magazine').css("right",(($(window).width() - 1.5*$(this).outerWidth()) / 2) + $(window).scrollLeft()  + "px");
-						$('#magazine').css("left","0");
+						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()*1.5) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("left","");
 					}
 
 
 					else  {
-						$('#magazine').css("right","0");
+						$('#magazine').css("right","");
 						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
 					}
 				}
+
+				if(page==1 || page == 14 )
+				$('.overlay').css('opacity','0');
 
 			},
 
 
 			turned: function(e, page, view) {
+
 
 				updateTabs();
 			}
@@ -386,16 +392,46 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 
 
 	$(window).bind('keydown', function(e){
+		var book = $(this);
+		currentPage = book.turn('page');
+		if (e.keyCode==37){
+			if($(window).width() < 694){
+				if(currentPage==4){
+					$('#magazine').css("left","");
+					$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+				}
+				else if(currentPage==3){
+					$('#magazine').css("right","");
+					$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+				}
+				else {
+					$('#magazine').turn('previous');
+				}
+			}
+			else {
+				$('#magazine').turn('previous');
+			}
 
-		if (e.keyCode==37)
-			$('#magazine').turn('previous');
-		else if (e.keyCode==39)
-			$('#magazine').turn('next');
+		}
+		else if (e.keyCode==39){
+			if($(window).width() < 694){
+				if(currentPage==2){
+					$('#magazine').css("left","");
+					$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+				}
+				else {
+					$('#magazine').turn('previous');
+				}
+			}
+			else {
+				$('#magazine').turn('next');
+			}
+		}
 		else if(e.keyCode >= 49 && e.keyCode <= 57 ){
 			$('.p1').addClass('hard');
 			$('#magazine').turn('page', e.keyCode-48);
 		}
-		$('path').css({animation: 'none'});
+		// $('path').css({animation: 'none'});
 
 	});
 
@@ -443,8 +479,8 @@ function isChrome() {
 	// $(".mascot").hide().css({'background-image':'url(./img/glow.png)'}).fadeIn(2000); };
 
 
-
-//initial center magazine
+//
+// //initial center magazine
 (function(){
 
 	$('#magazine').css("position","absolute");
@@ -458,7 +494,7 @@ function isChrome() {
 		$('#magazine').addClass('bigScreenTransition');
 	}
 	else{
-		$('#magazine').css("right",(($(window).width() - ($('#magazine').outerWidth()/2)) / 2) + $(window).scrollLeft() + "px");
+		$('#magazine').css("left",(($(window).width() - ($('#magazine').outerWidth())) / 2) + $(window).scrollLeft() + "px");
 		$('#magazine').addClass('smlScreenTransition');
 	}
 
@@ -526,6 +562,7 @@ setInterval( function() {
 	$("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
 
 }, 900 );
+
 
 
 </script>
