@@ -154,17 +154,11 @@ body{
 
 #magazine{
 	position: relative;
-<<<<<<< HEAD
 	height: 67vh;
 	width:90vh;
 	margin-top: 10vh;
-=======
-	height: 80vh;
-	width:108vh;
-	margin-top: 5vh;
 	overflow: hidden;
 	z-index: 10;
->>>>>>> 93771d98cb05c9ffdfbb57e6edc95a2ad297552f
 }
 
 
