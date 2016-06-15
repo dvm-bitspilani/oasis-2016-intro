@@ -141,7 +141,7 @@ body{
 .center{
 	width:50vw;
 	margin:auto;
-	margin-top:3vh;
+	margin-top:2vh;
 }
 
 /*
@@ -157,6 +157,8 @@ body{
 	height: 80vh;
 	width:108vh;
 	margin-top: 5vh;
+	overflow: hidden;
+	z-index: 10;
 }
 
 
@@ -762,11 +764,13 @@ path{
 	position: absolute;
 	bottom: 38px;
 	width: 100%;
+	z-index: 10;
 }
 
 #socialBox{
 	margin: 0 auto;
-	width: 17%;
+	width: 25%;
+
 }
 
 .socialIcon{
@@ -774,11 +778,29 @@ path{
 	width:33%;
 }
 
+
+@media screen and (min-width:1000px) {
+	#socialBox{
+		width: 20%
+	}
+}
+
+@media screen and (max-width:600px) {
+	#socialBox{
+		width: 35%
+	}
+}
 .socialIcon img{
 	height: 18px;
 	padding: 5px;
 	vertical-align: middle;
 
+}
+
+@media screen and (max-width:380px) {
+	.socialIcon img{
+		height: 15px;
+	}
 }
 
 .innerBox:nth-of-type(2) + .innerBox:hover{
@@ -789,4 +811,18 @@ path{
 	margin: 0 auto;
 	border: 2px solid #251000;
 	border-radius: 7px;
+}
+
+
+.overlay{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top:0;
+	left: 0;
+	margin: 0;
+	z-index: 5;
+	opacity: 0;
+	background: black;
+	transition: opacity 0.2s;
 }
