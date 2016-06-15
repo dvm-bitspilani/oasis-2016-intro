@@ -141,7 +141,9 @@
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
-			<div  class="hard fixed out" style="background-image:url(img/C2.jpg);background-repeat:no-repeat;background-position: center;" id="last"><div class="depth" id="rd"></div></div>
+			<div  class="hard fixed out" style="background-image:url(img/C2.jpg);background-repeat:no-repeat;background-position: center;" id="last">
+			<div class="depth" id="rd"></div>
+			</div>
 			<div  class="hard out backCover" style="background-image:url(img/temporaryBackCover.jpg);background-repeat:no-repeat;background-position: center;"><div ></div></div>
 		</div>
 	</div>
@@ -260,8 +262,9 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 		if (newPage>4)
 			$('#magazine .p2 .depth').css({
 				width: depthWidth,
-				left: 20 - depthWidth
+				left: 16 - depthWidth
 			});
+
 		else
 			$('#magazine .p2 .depth').css({width: 0});
 
@@ -270,8 +273,9 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 		if (newPage<pages-4)
 			$('#magazine .p13 .depth').css({
 				width: depthWidth,
-				right: 20 - depthWidth
+				left: 30 - depthWidth
 			});
+			 
 		else
 			$('#magazine .p13 .depth').css({width: 0});
 

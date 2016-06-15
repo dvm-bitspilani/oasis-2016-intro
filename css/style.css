@@ -237,7 +237,7 @@ body{
 	font-family: 'Harry P', sans-serif;
 	margin: 10px auto;
 	color: rgb(113, 26, 16);
-	font-size: 1.4em;
+	font-size: 2em;
 	/*#362609;*/
 }
  .pbox .row {
@@ -339,7 +339,8 @@ path{
 
 #rd{
 
-	margin-right:1.6vh;
+	float: right;
+	width: 1.6vh;
 }
 
 #ld{
