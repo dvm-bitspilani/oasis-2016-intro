@@ -26,6 +26,17 @@
  <span class="dashing"><i></i></span>
 </div>
 
+<div id="mobileControls">
+	<div id="controlsBox">
+		<div id="leftControl">
+			<img src="img/left.png" />
+		</div>
+		<div id="rightControl">
+			<img src="img/right.png" />
+		</div>
+	</div>
+</div>
+
 <div id="socialBoxRow">
 	<div id="socialBox">
 		<div class="socialIcon">
@@ -220,6 +231,8 @@ $(".inborder").css('width', bWidth-30);
 $(".inborder").css('height', bHeight-30);
 
 $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
+$(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',$(".dashing:nth-of-type(2) i").width()*2);
+
 
 	function updateTabs() {
 
@@ -276,7 +289,7 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 				width: depthWidth,
 				left: 30 - depthWidth
 			});
-			 
+
 		else
 			$('#magazine .p13 .depth').css({width: 0});
 
@@ -333,22 +346,26 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 				if($(window).width() < 694)
 				{
 					if(page==1){
-
-						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("left",(($(window).width() - $('#magazine').outerWidth()) / 2) + $(window).scrollLeft()  + "px");
 						$('#magazine').css("right","");
 					}
 
 					else if(page==14){
 
-						$('#magazine').css("right",(($(window).width() - $(this).outerWidth()*1.5) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("right",(($(window).width() - $('#magazine').outerWidth()*1.5) / 2) + $(window).scrollLeft()  + "px");
 						$('#magazine').css("left","");
 					}
 
-
+				  else	if(page==3){
+						$('#magazine').css("left","");
+						$('#magazine').css("right",(($(window).width() - $('#magazine').outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+					}
 					else  {
 						$('#magazine').css("right","");
-						$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+						$('#magazine').css("left",(($(window).width() - $('#magazine').outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
 					}
+
+
 				}
 
 				if(page==1 || page == 14 )
@@ -391,19 +408,52 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 
 
 
+	$('#leftControl').click(function(){
+		currentPage = $('#magazine').turn('page');
+		if($(window).width() < 694){
+			if(currentPage==4){
+				turn3();
+			}
+
+			else {
+				$('#magazine').turn('previous');
+			}
+		}
+		else {
+			$('#magazine').turn('previous');
+		}
+	});
+
+	$('#rightControl').click(function(){
+		currentPage = $('#magazine').turn('page');
+		if($(window).width() < 694){
+			if(currentPage==2){
+				turn3();
+				Hash.go('page/'+3).update();
+			}
+			else if(currentPage==3){
+				$('#magazine').turn('next');
+				// $('#magazine').css("right","");
+				// $('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+
+			}
+			else {
+				$('#magazine').turn('next');
+			}
+		}
+		else {
+			$('#magazine').turn('next');
+		}
+	});
+
 	$(window).bind('keydown', function(e){
-		var book = $(this);
-		currentPage = book.turn('page');
+		currentPage = $('#magazine').turn('page');
 		if (e.keyCode==37){
 			if($(window).width() < 694){
 				if(currentPage==4){
-					$('#magazine').css("left","");
-					$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+					turn3();
 				}
-				else if(currentPage==3){
-					$('#magazine').css("right","");
-					$('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
-				}
+
 				else {
 					$('#magazine').turn('previous');
 				}
@@ -416,11 +466,17 @@ $(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
 		else if (e.keyCode==39){
 			if($(window).width() < 694){
 				if(currentPage==2){
-					$('#magazine').css("left","");
-					$('#magazine').css("right",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+					turn3();
+					Hash.go('page/'+3).update();
+				}
+				else if(currentPage==3){
+					$('#magazine').turn('next');
+					// $('#magazine').css("right","");
+					// $('#magazine').css("left",(($(window).width() - $(this).outerWidth()/2) / 2) + $(window).scrollLeft()  + "px");
+
 				}
 				else {
-					$('#magazine').turn('previous');
+					$('#magazine').turn('next');
 				}
 			}
 			else {
@@ -456,7 +512,11 @@ function isChrome() {
 };
 
 
-
+function turn3(){
+	$('#magazine').css("left","");
+	$('#magazine').animate({"right":(($(window).width() - $('#magazine').outerWidth()/2) / 2) + $(window).scrollLeft()  + "px"},"slow");
+	$('#magazine').turn('page', 3);
+}
 
 	// Month picker
 

@@ -826,3 +826,44 @@ path{
 	background: black;
 	transition: opacity 0.2s;
 }
+
+
+#mobileControls{
+	position: absolute;
+	bottom:80px;
+	width: 100%;
+	z-index: 10;
+}
+
+#mobileControls img{
+	z-index: 10;
+}
+
+
+#controlsBox{
+	margin: 0 auto;
+	width:20%
+}
+
+#leftControl{
+	width:40%;
+	float: left;
+	margin-right:5px;
+}
+
+#rightControl{
+	width: 40%;
+	float: right;
+	margin-left:5px;
+
+}
+
+.disabled{
+	opacity: 0.5;
+}
+
+@media screen and (min-width:694px) {
+	#mobileControls{
+		display: none;
+	}
+}
