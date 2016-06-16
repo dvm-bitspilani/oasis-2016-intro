@@ -55,7 +55,7 @@
 	</div>
 </div>
 
-<div class="overlay"></div>
+<div class="overlayDiv"></div>
 	<div class="center">
 		<div id="book_box">
 			<div id="magazine">
@@ -119,13 +119,12 @@
 					<div class="hrule"></div>
 					<img class="star" src="img/star.png">
 				</div>
-				<div class="tBody">
+				<div class="tBody contentPage">
 					<br>
 					<p><span class="description"><a href="#page/4">About Oasis</a></span><span class="dots">...........................................................................................</span><span class="pNo">4-6</span></p></a>
-					<br><br>
 					<p><span class="description"><a href="#page/6">Contacts</a></span><span class="dots">...........................................................................................</span><span class="pNo">6-7</span></p></a>
-					<br><br>
-					<p><span class="description"><a href="#page/8">Sponsors</a></span><span class="dots">...........................................................................................</span><span class="pNo">8-8</span></p></a>
+					<p><span class="description"><a href="#page/8">Sponsors</a></span><span class="dots">...........................................................................................</span><span class="pNo">8-9</span></p></a>
+					<p><span class="description"><a href="#page/10">Videos</a></span><span class="dots">...........................................................................................</span><span class="pNo">10-12</span></p></a>
 				</div>
 				<img class="logo" src="img/logo.png" />
 			</div></div>
@@ -135,15 +134,14 @@
 			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page01-part2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
-			<div class="wrapperCenter" >
+			<!-- <div class="wrapperCenter" >
 
 				<div id="videoBox" >
 					<div class="loader">
-						<!-- <img src="img/load.gif" /> -->
 					</div>
 					<iframe width="100%" height:"100%" src="https://www.youtube.com/embed/oQtWSvYR1vc" frameborder="0" allowfullscreen  ></iframe>
 				</div>
-			</div>
+			</div> -->
 			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
@@ -157,12 +155,12 @@
 				</div>
 				<div class="tBody">
 					<div class="videoList">
-						<div class="video">
+						<div class="video" >
 							<div class="name">
 								<p>Oasis 2015 : Around the World in 96 hours</p>
 							</div>
 							<div class="thumbnailImg">
-								<img src="img/oasis15thumb.jpg" />
+								<img src="img/oasis15thumb.jpg" onclick="video(0)"/>
 							</div>
 						</div>
 						<div class="video">
@@ -170,7 +168,7 @@
 								<p>Oasis 2016 : Of Gods and Men</p>
 							</div>
 							<div class="thumbnailImg">
-								<img src="img/oasis16IntroThumb.jpg" />
+								<img src="img/oasis16IntroThumb.jpg" onclick="video(1)"/>
 							</div>
 						</div>
 					</div>
@@ -669,7 +667,35 @@ setInterval( function() {
 
 }, 900 );
 
+var $overlay = $('<div class="overlay"></div>');
+console.log("hi");
 
+$('.thumbnailImg img').css("z-index","15");
+
+function video(ele) {
+
+	console.log("hi");
+  // e.preventDefault();
+
+  // get video id from href (assumes v is last url param)
+  var vidId= ["oQtWSvYR1vc","LXjJ7FC5ovQ"];
+
+  // iframe embed
+  var $iframe = $('<div class="flexy"><iframe src="//youtube.com/embed/'+vidId[ele]+'?rel=0&autoplay=1" frameborder="0"></iframe></div>');
+
+  // append modal content
+  $('body').append($overlay);
+  $overlay.append($iframe);
+
+  // $('a[href*="youtube.com/"]').each( function(value) {
+  //     $frame.append(value);
+  // });
+
+};
+
+$overlay.click( function() {
+  $(this).detach().empty();
+});
 
 </script>
 </body>

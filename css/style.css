@@ -424,6 +424,7 @@ path{
 	/*bottom: 2px;*/
 	font-size: 1.1em;
 	position: relative;
+	font-family: 'Harry P',sans-serif;
 }
 
 .textras {
@@ -858,7 +859,7 @@ path{
 }
 
 
-.overlay{
+.overlayDiv{
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
@@ -928,20 +929,26 @@ path{
 
 .video{
 	margin:15px 10px;
+	z-index: 15;
 }
 
 
 .thumbnailImg{
+	position: relative;
 	width:100%;
   margin: 3px 0px;
+		z-index: 15;
 }
 
 .thumbnailImg img{
+	position: relative;
 	display: block;
 	height: 13vh;
 	margin: 0 auto;
   border: 2px dashed #000;
 	cursor: pointer;
+	z-index: 15;
+
 }
 
 
@@ -957,4 +964,46 @@ path{
 	font-size: 0.7em;
 	height: auto !important;
 	width: auto !important;
+}
+
+
+/*video lightbox*/
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flexy {
+  width: 60%;
+	/*margin: ;*/
+	height: 80%;
+}
+
+@media screen and (max-width:450px){
+	.flexy{
+		width: 80%;
+		height: 80%;
+	}
+}
+
+.flexy iframe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.9);
+}
+
+
+.contentPage p{
+	margin:4vh 0;
 }
