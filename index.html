@@ -60,7 +60,7 @@
 		<div id="book_box">
 			<div id="magazine">
 				<!-- <div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div> -->
-				<div style="background-image:url(img/cover.png);background-repeat:no-repeat;background-position: center;adow: 0 0 50px black;" class="hard out shadow">
+				<div style="background-image:url(img/cover.png);background-repeat:no-repeat;background-position: center;border-top-right-radius:3.5px;border-bottom-right-radius:3.5px" class="hard out shadow">
 					<!-- <div class="mascot"></div>
 					<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					width="100%" height="100%" viewBox="0 0 515 767" enable-background="new 0 0 515 767" xml:space="preserve">
@@ -101,7 +101,7 @@
 				</svg> -->
 
 			</div>
-			<div  class="hard out shadow" style="background-image:url(img/C2.jpg);">
+			<div  class="hard out shadow" style="background-image:url(img/C2.jpg);border-top-left-radius:3.5px;border-bottom-left-radius:3.5px">
 				<div class="instructions">
 					<div class="inner">
 						<div class="title">Tips</div>
@@ -121,11 +121,11 @@
 				</div>
 				<div class="tBody">
 					<br>
-					<a href="#page/4"><p><span class="description">About Oasis</span><span class="dots">...........................................................................................</span><span class="pNo">4-6</span></p></a>
+					<p><span class="description"><a href="#page/4">About Oasis</a></span><span class="dots">...........................................................................................</span><span class="pNo">4-6</span></p></a>
 					<br><br>
-					<a href="#page/6"><p><span class="description">Contacts</span><span class="dots">...........................................................................................</span><span class="pNo">6-7</span></p></a>
+					<p><span class="description"><a href="#page/6">Contacts</a></span><span class="dots">...........................................................................................</span><span class="pNo">6-7</span></p></a>
 					<br><br>
-					<a href="#page/8"><p><span class="description">Sponsors</span><span class="dots">...........................................................................................</span><span class="pNo">8-8</span></p></a>
+					<p><span class="description"><a href="#page/8">Sponsors</a></span><span class="dots">...........................................................................................</span><span class="pNo">8-8</span></p></a>
 				</div>
 				<img class="logo" src="img/logo.png" />
 			</div></div>
@@ -148,13 +148,40 @@
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page02-part2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
-			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
+			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
+				<div class="tHead">Videos</div>
+				<div class="textras">
+					<img class="star" src="img/star.png">
+					<div class="hrule"></div>
+					<img class="star" src="img/star.png">
+				</div>
+				<div class="tBody">
+					<div class="videoList">
+						<div class="video">
+							<div class="name">
+								<p>Oasis 2015 : Around the World in 96 hours</p>
+							</div>
+							<div class="thumbnailImg">
+								<img src="img/oasis15thumb.jpg" />
+							</div>
+						</div>
+						<div class="video">
+							<div class="name">
+								<p>Oasis 2016 : Of Gods and Men</p>
+							</div>
+							<div class="thumbnailImg">
+								<img src="img/oasis16IntroThumb.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page03-part2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
-			<div  class="hard fixed out shadow" style="background-image:url(img/C2.jpg);background-repeat:no-repeat;background-position: center;" id="last">
+			<div  class="hard fixed out shadow" style="background-image:url(img/C2.jpg);background-repeat:no-repeat;background-position: center;border-top-left-radius:3.5px;border-bottom-left-radius:3.5px" id="last">
 			<div class="depth" id="rd"></div>
 			</div>
-			<div  class="hard out backCover shadow" style="background-image:url(img/temporaryBackCover.jpg);background-repeat:no-repeat;background-position: center;"><div ></div></div>
+			<div  class="hard out backCover shadow" style="background-image:url(img/temporaryBackCover.jpg);background-repeat:no-repeat;background-position: center;border-top-left-radius:3.5px;border-bottom-left-radius:3.5px"><div ></div></div>
 		</div>
 	</div>
 </div>
@@ -313,7 +340,7 @@ $(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',$(".dashing
 
 			turning: function(e, page, view) {
 				reloader();
-				$('.overlay').css('opacity','0.45');
+				$('.overlay').css('opacity','0.2');
 				globalPage=0;
 				var book = $(this),
 				currentPage = book.turn('page'),
@@ -323,6 +350,8 @@ $(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',$(".dashing
 				// 			$('#magazine .tabs').fadeIn(100);
 				// 		else
 				// 			$('#magazine .tabs').hide();
+
+				Hash.go('page/'+page).update();
 
 				updateDepth(book, page);
 				if (page>=2)
@@ -580,11 +609,12 @@ function turn3(){
 //dots filler in content page
 
 setTimeout(function(){
-	$('.tBody a p').each(function(index,element){
+	$('.tBody p').each(function(index,element){
 		var paraWidth=$(element).width();
 		var descWidth=$(element).children('.description').outerWidth();
 		var pNoWidth=$(element).children('.pNo').width();
 		var $dots=$(element).children('.dots');
+		console.log(paraWidth,descWidth,pNoWidth);
 		var dotsWidth=paraWidth-(descWidth+pNoWidth+2);
 		$dots.width(dotsWidth+"px");
 	});

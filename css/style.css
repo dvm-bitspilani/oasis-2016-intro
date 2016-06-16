@@ -9,8 +9,8 @@
 }
 
 @font-face {
-	font-family: 'GameOfThrones';
-	src: url(GameOfThrones.ttf);
+	font-family: 'Requiem';
+	src: url(Requiem.ttf);
 }
 
 
@@ -368,25 +368,27 @@ path{
 	font-weight: bold;
 	max-width: 70%;
 	letter-spacing: 5px;
-	font-size: 3.15em;
+	font-size: 2.35em;
 	margin:0 auto;
 	margin-top: 13%;
 }
 
 .tBody {
-	font-family:'Harry P';
+	/*font-family:'Harry P';*/
 	color: #362609;
 	/*position: relative;*/
-	max-width: 70%;
+	max-width: 80%;
 	text-align: justify;
 	/*top: 20%;*/
 	margin: 0 auto;
-	margin-top:10%;
+	margin-top:2%;
 	font-size: 0.994em;
 }
 
-.tBody a{
+.description a{
 	text-decoration: none;
+	color: #362609;
+	font-family: 'Harry P',sans-serif;
 }
 
 .tBody p{
@@ -396,7 +398,7 @@ path{
 	width: 100%;
 	height: 28px;
 	position: relative;
- min-width: 220px;
+ min-width: 170px;
 }
 
 .tBody p span{
@@ -406,7 +408,7 @@ path{
 .description{
 	float: left;
 	bottom: 0;
-	font-size: 1.7em;
+	font-size: 1.4em;
 }
 
 .dots{
@@ -420,7 +422,7 @@ path{
 .pNo{
 	float: right;
 	/*bottom: 2px;*/
-	font-size: 1.2em;
+	font-size: 1.1em;
 	position: relative;
 }
 
@@ -549,7 +551,7 @@ path{
 
 #logoMain{
 	position: absolute;
-	width:15%;
+	width:18%;
 	left:45px;
 	top:45px;
 	/*float: left;*/
@@ -924,4 +926,35 @@ path{
 }
 
 
-.page-wrapper{}
+.video{
+	margin:15px 10px;
+}
+
+
+.thumbnailImg{
+	width:100%;
+  margin: 3px 0px;
+}
+
+.thumbnailImg img{
+	display: block;
+	height: 13vh;
+	margin: 0 auto;
+  border: 2px dashed #000;
+	cursor: pointer;
+}
+
+
+.name{
+	text-align: center;;
+}
+
+
+
+.name p{
+	margin: 0;
+	font-family: 'Lato',sans-serif;
+	font-size: 0.7em;
+	height: auto !important;
+	width: auto !important;
+}
