@@ -29,10 +29,8 @@
 <div id="mobileControls">
 	<div id="controlsBox">
 		<div id="leftControl">
-			<img src="img/left.png" />
 		</div>
 		<div id="rightControl">
-			<img src="img/right.png" />
 		</div>
 	</div>
 </div>
@@ -40,18 +38,18 @@
 <div id="socialBoxRow">
 	<div id="socialBox">
 		<div class="socialIcon">
-			<div class="innerBox">
-				<a href="https://www.facebook.com/oasis.bitspilani" target="_blank"><img src="img/fb.png"/></a>
+			<div class="innerBox" style="background-image:url(img/fb.png)">
+				<!-- <a href="https://www.facebook.com/oasis.bitspilani" target="_blank"><img src="img/fb.png"/></a> -->
+			</div>
+		</div>
+		<div class="socialIcon" >
+			<div class="innerBox" style="background-image:url(img/twitter.png)">
+				<!-- <a href="https://www.twitter.com/bitsoasis" target="_blank"><img src="img/twitter.png"/></a> -->
 			</div>
 		</div>
 		<div class="socialIcon">
-			<div class="innerBox">
-				<a href="https://www.twitter.com/bitsoasis" target="_blank"><img src="img/twitter.png"/></a>
-			</div>
-		</div>
-		<div class="socialIcon">
-			<div class="innerBox">
-				<a href="http://www.youtube.com/user/OasisBITS" target="_blank"><img src="img/youtube.png"/></a>
+			<div class="innerBox" style="background-image:url(img/youtube.png)">
+				<!-- <a href="http://www.youtube.com/user/OasisBITS" target="_blank"><img src="img/youtube.png"/></a> -->
 			</div>
 		</div>
 	</div>
@@ -370,7 +368,19 @@ $(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',$(".dashing
 
 				if(page==1 || page == 14 )
 				$('.overlay').css('opacity','0');
+				if(page==1){
+					$('#leftControl').addClass('disabled');
+					$('#rightControl').removeClass('disabled');
 
+				}
+				else if(page==14){
+					$('#rightControl').addClass('disabled');
+					$('#leftControl').removeClass('disabled');
+
+				}
+				else {
+					$('#leftControl,#rightControl').removeClass('disabled');
+				}
 			},
 
 
@@ -556,7 +566,16 @@ function turn3(){
 	else{
 		$('#magazine').css("left",(($(window).width() - ($('#magazine').outerWidth())) / 2) + $(window).scrollLeft() + "px");
 		$('#magazine').addClass('smlScreenTransition');
+		$('#logoMain img').css("height",$('#magazine').offset().top-48);
+		$('#logoMain img').css("width","");
 	}
+	if($('#magazine').turn('page')==1){
+		$('#leftControl').addClass('disabled');
+	}
+	if($('#magazine').turn('page')==14){
+		$('#rightControl').addClass('disabled');
+	}
+
 
 })();
 

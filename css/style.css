@@ -157,7 +157,7 @@ body{
 	height: 67vh;
 	width:90vh;
 	margin-top: 10vh;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	z-index: 10;
 }
 
@@ -235,13 +235,6 @@ body{
 	align-items: center;
 }
 
-.ctime {
-	font-family: 'Harry P', sans-serif;
-	margin: 10px auto;
-	color: rgb(113, 26, 16);
-	font-size: 2em;
-	/*#362609;*/
-}
  .pbox .row {
 	width: 100%;
 	position: relative;
@@ -581,6 +574,14 @@ path{
 	width: 10vw;
 }
 
+.ctime {
+	font-family: 'Harry P', sans-serif;
+	margin: 10px auto;
+	color: rgb(113, 26, 16);
+	font-size: 1.4em;
+	/*#362609;*/
+}
+
 #rightman {
 	position: absolute;
 	right: 40px;
@@ -591,9 +592,32 @@ path{
 	width: 18vw;
 }
 
-@media screen and (max-width:760px){
+/*@media screen and (max-width:760px){
 	#logoMain img{
 		width:85%;
+	}
+}*/
+
+@media screen and (max-width:694px){
+	#rightman img{
+		width:10vh;
+	}
+
+	#leftlady img{
+		width: 5vh;
+	}
+
+	#leftlady{
+		bottom:45px;
+	}
+
+	#compass .row:nth-of-type(1){
+		display: none;
+	}
+
+	.ctime{
+		margin: 0 auto;
+		font-size: 1.1em;
 	}
 }
 
@@ -762,20 +786,22 @@ path{
 
 #socialBoxRow{
 	position: absolute;
-	bottom: 38px;
+	bottom: 44px;
 	width: 100%;
 	z-index: 10;
+	height: 5.5vh;
 }
 
 #socialBox{
 	margin: 0 auto;
 	width: 25%;
-
+	height: 100%;
 }
 
 .socialIcon{
 	float: left;
 	width:33%;
+	height: 100%;
 }
 
 
@@ -787,7 +813,11 @@ path{
 
 @media screen and (max-width:600px) {
 	#socialBox{
-		width: 35%
+		width: 27%
+	}
+
+	#socialBoxRow{
+		height: 3.7vh;
 	}
 }
 .socialIcon img{
@@ -807,10 +837,16 @@ path{
 	-webkit-filter: hue-rotate(546deg) saturate(4181.1%)
 }
 .innerBox{
-	width: 60%;
+	cursor:pointer;
+	width: 45%;
+	height:80%;
+	padding:3px;
 	margin: 0 auto;
 	border: 2px solid #251000;
 	border-radius: 7px;
+	background-repeat: no-repeat;
+	background-size: auto 80%;
+	background-position: center;
 }
 
 
@@ -833,6 +869,7 @@ path{
 	bottom:80px;
 	width: 100%;
 	z-index: 10;
+	height: 3.7vh;
 }
 
 #mobileControls img{
@@ -842,20 +879,32 @@ path{
 
 #controlsBox{
 	margin: 0 auto;
-	width:20%
+	width:20%;
+	height: 100%;
 }
 
 #leftControl{
+	cursor:pointer;
 	width:40%;
+	height:100%;
 	float: left;
 	margin-right:5px;
+	background-image: url(../img/left.png);
+	background-repeat: no-repeat;
+	background-size: auto 80%;
+	background-position: center;
 }
 
 #rightControl{
+	cursor:pointer;
 	width: 40%;
+	height: 100%;
 	float: right;
 	margin-left:5px;
-
+	background-image: url(../img/right.png);
+	background-repeat: no-repeat;
+	background-size: auto 80%;
+	background-position: center;
 }
 
 .disabled{
