@@ -8,12 +8,6 @@
 	src: url(Metalista.woff);
 }
 
-@font-face {
-	font-family: 'Requiem';
-	src: url(Requiem.ttf);
-}
-
-
 
 html{
 
@@ -386,7 +380,7 @@ path{
 	font-family:'Harry P';
 	color: #362609;
 	/*position: relative;*/
-	max-width: 80%;
+	width: 85%;
 	text-align: justify;
 	/*top: 20%;*/
 	margin: 0 auto;
@@ -400,7 +394,7 @@ path{
 	font-family: 'Harry P',sans-serif;
 }
 
-.tBody p{
+.contentPage p{
 	background: inherit;
   color: #362609;
 	margin: 0 auto;
@@ -410,7 +404,7 @@ path{
  min-width: 170px;
 }
 
-.tBody p span{
+.contentPage p span{
 	line-height: 28px;
 }
 
@@ -555,7 +549,9 @@ path{
 .content{
 	font-size: 0.62em;
   margin: 18px 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Poiret One', sans-serif;
+	font-weight: bolder;
+	letter-spacing: 1.3px;
 }
 
 
@@ -942,6 +938,62 @@ path{
 	cursor: pointer;
 }
 
+.contact{
+	margin:15px 10px;3
+	z-index: 15;
+	display: block;
+	cursor: pointer;
+}
+
+.contact p{
+	font-size: 13px;
+	margin:0;
+	font-family:  'Poiret One', sans-serif;
+	font-weight: bolder;
+	letter-spacing: 1px;
+	line-height: 17px;
+	white-space: nowrap;
+}
+
+.container{
+	min-width: 100%;
+}
+
+.sponsor{
+	margin:15px 0;
+	width: 100%;
+	z-index: 15;
+	cursor: pointer;
+}
+
+
+.sponsor img{
+	vertical-align: middle;
+	border: none !important;
+	height: auto!important;
+}
+
+.row .sponsor{
+	margin: 6px auto!important;
+}
+.sponsor .thumbnailImg{
+	width: 100%;
+	margin: 7px auto;
+	height: 6vh !important;
+	background-size:contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.sponsor .row{
+	width: 100%;
+}
+
+.type2{
+	width: 48% !important;
+	display: inline-block;
+	vertical-align: top;
+}
 
 .thumbnailImg{
 	position: relative;
@@ -982,11 +1034,20 @@ path{
 .name p,.watch p{
 	margin: 0;
 	font-family: 'Lato',sans-serif;
+	/*font-weight: bolder;*/
 	font-size: 0.7em;
 	height: auto !important;
 	width: auto !important;
 	min-width: 50% !important;
 }
+
+/*.video .name p,.video .watch p{
+	letter-spacing: 0.5px;
+}
+
+.sponsor .name p,.sponsor .watch p{
+	letter-spacing: 0.8px;
+}*/
 
 @media screen and (max-width:450px) {
 	.name p,.watch p{
