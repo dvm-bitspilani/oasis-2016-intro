@@ -37,24 +37,24 @@ body{
 
 .outborder {
 	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	position: fixed;
 	margin:15px;
 	top:0;
 	/*width: 100%;*/
 	/*height: 100%;*/
 	border: 10px solid transparent;
-    padding: 15px;
-    /*-webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
-    /*-o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
-    border-image: url(../img/borderpatt1.png) 15 repeat;
+	padding: 15px;
+	/*-webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+	/*-o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+	border-image: url(../img/borderpatt1.png) 15 repeat;
 }
 
 .inborder {
 	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	position: fixed;
 	overflow: hidden;
 	margin: 30px;
@@ -64,44 +64,44 @@ body{
 	/*border: 4px dashed #251000;
 	box-shadow: inset 0 -1px 0 0 #251000, inset 0 1px 0 0 #251000, 0 1px 0 0 #251000, 0 -1px 0 0 #251000,
 	inset -1px 0 0 0 #251000,1px 0 0 0 #251000,inset 1px 0 0 0 #251000,-1px 0 0 0 #251000;
-    padding: 15px;*/
-    /*-webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
-    /*-o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
-    /*border-image: url(../img/borderpatt2.png) 20 repeat;*/
+	padding: 15px;*/
+	/*-webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+	/*-o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+	/*border-image: url(../img/borderpatt2.png) 20 repeat;*/
 }
 
 
 
 
 .dashing {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 .dashing:nth-of-type(1) {
-  transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 .dashing:nth-of-type(2) {
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 .dashing:nth-of-type(3) {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 .dashing:nth-of-type(4) {
-  transform: rotate(270deg);
+	transform: rotate(270deg);
 
 }
 .dashing i {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200%;
 	padding: 0.4px;
 	border-bottom: 4px dashed #251000;
 	box-shadow: inset 0 -1px 0 0 #251000, 0 1px 0 0 #251000;
-  /*animation: slideDash 30s infinite linear;*/
+	/*animation: slideDash 30s infinite linear;*/
 }
 
 .dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i{
@@ -113,33 +113,33 @@ body{
 }
 
 @keyframes slideDash {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0%);
-  }
+	from {
+		transform: translateX(-50%);
+	}
+	to {
+		transform: translateX(0%);
+	}
 }
 
 #top, #bottom, #left, #right {
 	position: fixed;
 	background-size: cover;
-	}
-	#left, #right {
-		background: url(../img/bd-left.jpg);
-		top: 0; bottom: 0;
-		width: 15px;
-		}
-		#left { left: 0; }
-		#right { right: 0; }
+}
+#left, #right {
+	background: url(../img/bd-left.jpg);
+	top: 0; bottom: 0;
+	width: 15px;
+}
+#left { left: 0; }
+#right { right: 0; }
 
-	#top, #bottom {
-		background: url(../img/bd-top.jpg);
-		left: 0; right: 0;
-		height: 15px;
-		}
-		#top { top: 0; }
-		#bottom { bottom: 0; }
+#top, #bottom {
+	background: url(../img/bd-top.jpg);
+	left: 0; right: 0;
+	height: 15px;
+}
+#top { top: 0; }
+#bottom { bottom: 0; }
 
 .center{
 	width:50vw;
@@ -149,9 +149,9 @@ body{
 
 /*
 @media screen and (max-width: 694px) {
-	.center {
-		width: 95vw;
-	}
+.center {
+width: 95vw;
+}
 
 }*/
 
@@ -238,12 +238,12 @@ body{
 	align-items: center;
 }
 
- .pbox .row {
+.pbox .row {
 	width: 100%;
 	position: relative;
 	display: flex;
 	flex-direction: row;
- }
+}
 
 #bar{
 	/*height:10vh;*/
@@ -251,7 +251,7 @@ body{
 	background-color: #351600;
 	border-radius: 5px;
 	height: 1vh;
-    margin: 2.1vh 4vh;
+	margin: 2.1vh 4vh;
 	/*margin: 0 auto;*/
 }
 
@@ -291,9 +291,9 @@ body{
 	background-size:45vh 67vh;
 }
 .shadow {
-  -webkit-box-shadow: 3px 5px 25px 5px #251000;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 5px 25px 5px #251000;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 5px 25px 5px #251000;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+	-webkit-box-shadow: 3px 5px 25px 5px #251000;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow:    3px 5px 25px 5px #251000;  /* Firefox 3.5 - 3.6 */
+	box-shadow:         3px 5px 25px 5px #251000;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 #last{
@@ -396,12 +396,12 @@ path{
 
 .contentPage p{
 	background: inherit;
-  color: #362609;
+	color: #362609;
 	margin: 0 auto;
 	width: 100%;
 	height: 28px;
 	position: relative;
- min-width: 170px;
+	min-width: 170px;
 }
 
 .contentPage p span{
@@ -514,11 +514,11 @@ path{
 
 
 #space {
-  position: absolute;
+	position: absolute;
 	top: 0;
 	left: 0;
-  z-index: -10;
-  background: #000000;
+	z-index: -10;
+	background: #000000;
 }
 
 .instructions{
@@ -548,7 +548,7 @@ path{
 
 .content{
 	font-size: 0.62em;
-  margin: 18px 0;
+	margin: 18px 0;
 	font-family: 'Poiret One', sans-serif;
 	font-weight: bolder;
 	letter-spacing: 1.3px;
@@ -561,7 +561,7 @@ path{
 	left:45px;
 	top:45px;
 	/*float: left;*/
-    /*display: inline-block;*/
+	/*display: inline-block;*/
 }
 
 #logoMain img{
@@ -570,8 +570,8 @@ path{
 
 #leftlady {
 	position: absolute;
-    bottom: 54px;
-    left: 54px;
+	bottom: 54px;
+	left: 54px;
 }
 
 #leftlady img {
@@ -607,9 +607,9 @@ path{
 }
 
 /*@media screen and (max-width:760px){
-	#logoMain img{
-		width:85%;
-	}
+#logoMain img{
+width:85%;
+}
 }*/
 
 @media screen and (max-width:694px){
@@ -654,15 +654,15 @@ path{
 #videoBox iframe{
 	display: none;
 	position: relative;
-  border: 2px dashed #000;
+	border: 2px dashed #000;
 	/*box-shadow: inset 0 -1px 0 0 rgb(31, 22, 15), inset 0 1px 0 0 rgb(31, 22, 15), 0 1px 0 0 rgb(31, 22, 15), 0 -1px 0 0 rgb(31, 22, 15),
-		inset -1px 0 0 0 rgb(31, 22, 15), 1px 0 0 0 rgb(31, 22, 15),inset 1px 0 0 0 rgb(31, 22, 15), -1px 0 0 0 rgb(31, 22, 15);*/
+	inset -1px 0 0 0 rgb(31, 22, 15), 1px 0 0 0 rgb(31, 22, 15),inset 1px 0 0 0 rgb(31, 22, 15), -1px 0 0 0 rgb(31, 22, 15);*/
 }
 
 /*.loader{
-	position: absolute;
-	margin: 0 auto;
-	display: block;
+position: absolute;
+margin: 0 auto;
+display: block;
 }*/
 
 
@@ -672,23 +672,23 @@ path{
 	height: 7px;
 	left: 46%;
 	left: calc(50% - 4px);
-		left: -o-calc(50% - 4px);
-		left: -ms-calc(50% - 4px);
-		left: -webkit-calc(50% - 4px);
-		left: -moz-calc(50% - 4px);
+	left: -o-calc(50% - 4px);
+	left: -ms-calc(50% - 4px);
+	left: -webkit-calc(50% - 4px);
+	left: -moz-calc(50% - 4px);
 
 	border-radius: 7px;
 	background-color: rgb(31, 22, 15);
 	transform-origin:	50% 50%;
-		-o-transform-origin:	50% 50%;
-		-ms-transform-origin:	50% 50%;
-		-webkit-transform-origin:	50% 50%;
-		-moz-transform-origin:	50% 50%;
+	-o-transform-origin:	50% 50%;
+	-ms-transform-origin:	50% 50%;
+	-webkit-transform-origin:	50% 50%;
+	-moz-transform-origin:	50% 50%;
 	animation: loader 1.15s ease-in-out infinite;
-		-o-animation: loader 1.15s ease-in-out infinite;
-		-ms-animation: loader 1.15s ease-in-out infinite;
-		-webkit-animation: loader 1.15s ease-in-out infinite;
-		-moz-animation: loader 1.15s ease-in-out infinite;
+	-o-animation: loader 1.15s ease-in-out infinite;
+	-ms-animation: loader 1.15s ease-in-out infinite;
+	-webkit-animation: loader 1.15s ease-in-out infinite;
+	-moz-animation: loader 1.15s ease-in-out infinite;
 }
 
 .loader:before{
@@ -717,33 +717,33 @@ path{
 
 
 @keyframes loader{
-		0%{transform:rotate(0deg);}
-		50%{transform:rotate(180deg);}
-		100%{transform:rotate(180deg);}
+	0%{transform:rotate(0deg);}
+	50%{transform:rotate(180deg);}
+	100%{transform:rotate(180deg);}
 }
 
 @-o-keyframes loader{
-		0%{-o-transform:rotate(0deg);}
-		50%{-o-transform:rotate(180deg);}
-		100%{-o-transform:rotate(180deg);}
+	0%{-o-transform:rotate(0deg);}
+	50%{-o-transform:rotate(180deg);}
+	100%{-o-transform:rotate(180deg);}
 }
 
 @-ms-keyframes loader{
-		0%{-ms-transform:rotate(0deg);}
-		50%{-ms-transform:rotate(180deg);}
-		100%{-ms-transform:rotate(180deg);}
+	0%{-ms-transform:rotate(0deg);}
+	50%{-ms-transform:rotate(180deg);}
+	100%{-ms-transform:rotate(180deg);}
 }
 
 @-webkit-keyframes loader{
-		0%{-webkit-transform:rotate(0deg);}
-		50%{-webkit-transform:rotate(180deg);}
-		100%{-webkit-transform:rotate(180deg);}
+	0%{-webkit-transform:rotate(0deg);}
+	50%{-webkit-transform:rotate(180deg);}
+	100%{-webkit-transform:rotate(180deg);}
 }
 
 @-moz-keyframes loader{
-		0%{-moz-transform:rotate(0deg);}
-		50%{-moz-transform:rotate(180deg);}
-		100%{-moz-transform:rotate(180deg);}
+	0%{-moz-transform:rotate(0deg);}
+	50%{-moz-transform:rotate(180deg);}
+	100%{-moz-transform:rotate(180deg);}
 }
 
 
@@ -754,21 +754,21 @@ path{
 	margin: 0 auto;
 	background: transparent;
 	list-style: none;
-	}
+}
 
 #sec, #min, #hour {
 	position: absolute;
 	width: 10vw;
 	height: 10vw;
 	transform: scale(0.3);
-	}
+}
 
 #sec {
 	background: url(../img/3.png);
 	background-size: contain;
 	z-index: 1;
 	animation: scale 4s linear;
-		}
+}
 
 #min {
 	background: url(../img/2.png);
@@ -776,7 +776,7 @@ path{
 	z-index: 2;
 	animation: scale 3s linear;
 
-		}
+}
 
 #hour {
 	background: url(../img/-1.png);
@@ -784,18 +784,18 @@ path{
 	z-index: 3;
 	animation: scale 2s linear;
 
-		}
+}
 
-		@keyframes scale{
-			0%
-			{
-				transform: scale(0.3);
-			}
-			100%
-			{
-				transform:scale(1);
-			}
-		}
+@keyframes scale{
+	0%
+	{
+		transform: scale(0.3);
+	}
+	100%
+	{
+		transform:scale(1);
+	}
+}
 
 
 #socialBoxRow{
@@ -960,7 +960,7 @@ path{
 }
 
 .sponsor{
-	margin:11px 0;
+	margin:8px 0;
 	width: 100%;
 	z-index: 15;
 	cursor: pointer;
@@ -983,6 +983,8 @@ path{
 	background-size:contain;
 	background-position: center;
 	background-repeat: no-repeat;
+	-webkit-filter: grayscale(5%) saturate(74%) contrast(103%);
+	filter: grayscale(5%) saturate(74%) contrast(103%);
 }
 
 .sponsor .row{
@@ -998,16 +1000,16 @@ path{
 .thumbnailImg{
 	position: relative;
 	width:100%;
-  margin: 3px 0px;
-		z-index: 15;
+	margin: 3px 0px;
+	z-index: 15;
 }
 
 .thumbnailImg img{
 	position: relative;
 	display: block;
-	height: 13vh;
+	height: 12vh;
 	margin: 0 auto;
-  border: 2px dashed #000;
+	border: 2px dashed #000;
 	z-index: 15;
 
 }
@@ -1020,15 +1022,15 @@ path{
 .watch{
 	width: 50%;
 	display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
 }
 
 .watch img{
 	height: 8px;
-    margin-right: 6px;
-    float: left;
+	margin-right: 6px;
+	float: left;
 }
 
 .name p,.watch p{
@@ -1042,11 +1044,11 @@ path{
 }
 
 /*.video .name p,.video .watch p{
-	letter-spacing: 0.5px;
+letter-spacing: 0.5px;
 }
 
 .sponsor .name p,.sponsor .watch p{
-	letter-spacing: 0.8px;
+letter-spacing: 0.8px;
 }*/
 
 @media screen and (max-width:450px) {
@@ -1058,20 +1060,20 @@ path{
 
 /*video lightbox*/
 .overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.7);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .flexy {
-  width: 60%;
+	width: 60%;
 	/*margin: ;*/
 	height: 80%;
 }
@@ -1084,12 +1086,12 @@ path{
 }
 
 .flexy iframe {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  box-shadow: 0 0 22px rgba(0, 0, 0, 0.9);
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 22px rgba(0, 0, 0, 0.9);
 }
 
 
