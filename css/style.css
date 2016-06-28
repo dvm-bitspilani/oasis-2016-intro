@@ -373,7 +373,7 @@ path{
 	letter-spacing: 5px;
 	font-size: 2.35em;
 	margin:0 auto;
-	margin-top: 13%;
+	margin-top: 16%;
 }
 
 .tBody {
@@ -939,7 +939,7 @@ path{
 }
 
 .contact{
-	margin:15px 10px;3
+	margin:13px 10px;
 	z-index: 15;
 	display: block;
 	cursor: pointer;
@@ -951,7 +951,7 @@ path{
 	font-family:  'Poiret One', sans-serif;
 	font-weight: bolder;
 	letter-spacing: 1px;
-	line-height: 17px;
+	line-height: 16px;
 	white-space: nowrap;
 }
 
@@ -960,7 +960,7 @@ path{
 }
 
 .sponsor{
-	margin:15px 0;
+	margin:11px 0;
 	width: 100%;
 	z-index: 15;
 	cursor: pointer;
@@ -978,7 +978,7 @@ path{
 }
 .sponsor .thumbnailImg{
 	width: 100%;
-	margin: 7px auto;
+	margin: 3px auto;
 	height: 6vh !important;
 	background-size:contain;
 	background-position: center;
