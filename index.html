@@ -12,6 +12,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable">
 </head>
 <body>
+	<div id="loader">
+	<div class='wrap'>
+	<div class='block2'>
+		<img src="img/loader2.gif" alt="">
+	</div>
+	<div class="logoLoader">
+		<img src="img/logo.png" alt="">
+	</div>
+	<div class='block'>
+		<img src="img/loader2.gif" alt="">
+	</div>
+</div>
+</div>
+
 	<div id="left"></div>
 	<div id="right"></div>
 	<div id="top"></div>
@@ -138,7 +152,7 @@
 				<div class="tBody" style="font-size:1.5em; width: 75%; margin-top: 8%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti culpa fugiat doloribus nesciunt placeat et ea ratione facere voluptas, quibusdam tempora magni natus vero reprehenderit magnam illum ad est perferendis! </div>
 			</div></div>
 			<div  class="in_page own-size"><div style="background-image:url(img/page01-part2.jpg);background-repeat:no-repeat;background-position: center;" class="page_content"></div></div>
-			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
+			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
 				<div class="tHead">Contact</div>
 				<div class="textras">
 					<img class="star" src="img/star.png">
@@ -163,8 +177,8 @@
 					</div>
 				</div>
 			</div></div>
-			<div  class="in_page own-size"><div style="background-image:url(img/page02-part1.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
-				<div class="tBody" style="font-size:1.5em;margin-top:6vh">
+			<div  class="in_page own-size"><div style="background-image:url(img/page03-part1flip.jpg);background-repeat:no-repeat;background-position: center;" class="page_content">
+				<div class="tBody" style="font-size:1.5em;margin-top:8vh">
 					<div class="contact">
 						<div class="innerContainer">
 							<p>Ketul Mathuria<br> Reception and Accommodation<br> recnacc[at]bits-oasis[dot]org<br> Ph : 9694874277</p>
@@ -285,9 +299,11 @@
 <div id="compass">
 	<div class="row">
 		<div id="clock">
-			<div id="sec"></div>
+			<div id="bg1"></div>
+			<div id="bg2" class="hideEle"></div>
+			<!-- <div id="sec"></div>
 			<div id="hour"></div>
-			<div id="min"></div>
+			<div id="min"></div> -->
 		</div>
 	</div>
 	<div class="row">
@@ -329,7 +345,25 @@
 
 <script type="text/javascript">
 
+$(window).load(function(){
+   // PAGE IS FULLY LOADED
+   // FADE OUT YOUR OVERLAYING DIV
+	//  $('#loader').addClass('remBlur');
+	$('.block2').delay(3000).animate({
+		left: "-=200px"
+	},2000);
+	$('.block').delay(3000).animate({
+		right: "-=200px"
+	},2000);
+	// $('.logoLoader img').addClass('blur');
+   $('#loader').delay(4000).fadeOut(1000);
+});
 //Border Size Calc
+
+setInterval(function () {
+	$("#bg1").toggleClass('hideEle');
+	$("#bg2").toggleClass('hideEle');
+},700);
 
 $(document).ready(border());
 $(window).resize(border);
@@ -452,9 +486,9 @@ $('#magazine').turn({
 			$('.p2').removeClass('fixed');
 
 			if (page<book.turn('pages'))
-			$('.p19').addClass('fixed');
+			$('.p13').addClass('fixed');
 			else
-			$('.p19').removeClass('fixed');
+			$('.p13').removeClass('fixed');
 			// if(page==7)
 			// loader();
 			//responsive for small screens
