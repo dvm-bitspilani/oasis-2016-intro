@@ -13,18 +13,25 @@
 </head>
 <body>
 	<div id="loader">
-	<div class='wrap'>
-	<div class='block2'>
-		<img src="img/loader2.gif" alt="">
+		<div class='wrap'>
+			<div class='block2'>
+				<img src="img/loader2.gif" alt="">
+			</div>
+			<div class="logoLoader">
+				<img src="img/logo.png" alt="">
+			</div>
+			<div class='block'>
+				<img src="img/loader2.gif" alt="">
+			</div>
+			<div class="instruction" >
+				<center><span>tips</span></center>
+				<p>Use arrow keys in your keyboard to turn the page</p>
+				<p>Hold the left mouse button at the corners to turn the page</p>
+				<p>Press the number on keyboard corresponding to the starting page number of the content</p>
+				<!-- <center><img src="img/arrkeys.png"></center> -->
+			</div>
+		</div>
 	</div>
-	<div class="logoLoader">
-		<img src="img/logo.png" alt="">
-	</div>
-	<div class='block'>
-		<img src="img/loader2.gif" alt="">
-	</div>
-</div>
-</div>
 
 	<div id="left"></div>
 	<div id="right"></div>
@@ -345,7 +352,7 @@
 
 <script type="text/javascript">
 
-$(window).load(function(){
+	$(window).load(function(){
    // PAGE IS FULLY LOADED
    // FADE OUT YOUR OVERLAYING DIV
 	//  $('#loader').addClass('remBlur');
@@ -356,7 +363,7 @@ $(window).load(function(){
 		right: "-=200px"
 	},2000);
 	// $('.logoLoader img').addClass('blur');
-   $('#loader').delay(4000).fadeOut(1000);
+	$('#loader').delay(4000).fadeOut(1000);
 });
 //Border Size Calc
 
@@ -398,13 +405,13 @@ function updateTabs() {
 		var isHere = $.inArray(parseInt(page, 4), view)!=-1;
 
 		if (page>actualPage && !isHere)
-		right.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
+			right.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
 		else if (isHere) {
 
 			if (page%2===0)
-			left.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
+				left.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
 			else
-			right.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
+				right.push('<a href="#page/' + page + '" class="on">' + tabs[page] + '</a>');
 		} else
 		left.push('<a href="#page/' + page + '">' + tabs[page] + '</a>');
 
@@ -425,24 +432,24 @@ function updateDepth(book, newPage) {
 	newPage = newPage || page;
 
 	if (newPage>4)
-	$('#magazine .p2 .depth').css({
-		width: depthWidth,
-		left: 16 - depthWidth
-	});
+		$('#magazine .p2 .depth').css({
+			width: depthWidth,
+			left: 16 - depthWidth
+		});
 
 	else
-	$('#magazine .p2 .depth').css({width: 0});
+		$('#magazine .p2 .depth').css({width: 0});
 
 	depthWidth = 16*Math.min(1, (pages-page)*2/pages);
 
 	if (newPage<pages-4)
-	$('#magazine .p13 .depth').css({
-		width: depthWidth,
-		left: 30 - depthWidth
-	});
+		$('#magazine .p13 .depth').css({
+			width: depthWidth,
+			left: 30 - depthWidth
+		});
 
 	else
-	$('#magazine .p13 .depth').css({width: 0});
+		$('#magazine .p13 .depth').css({width: 0});
 
 };
 
@@ -481,14 +488,14 @@ $('#magazine').turn({
 
 			updateDepth(book, page);
 			if (page>=2)
-			$('.p2').addClass('fixed');
+				$('.p2').addClass('fixed');
 			else
-			$('.p2').removeClass('fixed');
+				$('.p2').removeClass('fixed');
 
 			if (page<book.turn('pages'))
-			$('.p13').addClass('fixed');
+				$('.p13').addClass('fixed');
 			else
-			$('.p13').removeClass('fixed');
+				$('.p13').removeClass('fixed');
 			// if(page==7)
 			// loader();
 			//responsive for small screens
@@ -519,7 +526,7 @@ $('#magazine').turn({
 			}
 
 			if(page==1 || page == 14 )
-			$('.overlay').css('opacity','0');
+				$('.overlay').css('opacity','0');
 			if(page==1){
 				$('#leftControl').addClass('disabled');
 				$('#rightControl').removeClass('disabled');
@@ -554,14 +561,14 @@ Hash.on('^page\/([0-9]*)$', {
 
 		if (page!==undefined) {
 			if ($('#magazine').turn('is'))
-			$('#magazine').turn('page', page);
+				$('#magazine').turn('page', page);
 		}
 
 	},
 	nop: function(path) {
 
 		if ($('#magazine').turn('is'))
-		$('#magazine').turn('page', 1);
+			$('#magazine').turn('page', 1);
 	}
 });
 
