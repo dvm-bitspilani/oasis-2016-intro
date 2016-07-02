@@ -595,7 +595,7 @@ path{
 	font-family: 'Harry P', sans-serif;
 	margin: 10px auto;
 	color: rgb(113, 26, 16);
-	font-size: 1.4em;
+	font-size: 1.9em;
 	/*#362609;*/
 }
 
@@ -752,8 +752,8 @@ display: block;
 
 #clock {
 	position: relative;
-	width: 10vw;
-	height: 10vw;
+	width: 11vw;
+	height: 11vw;
 	margin: 0 auto;
 	background: transparent;
 	list-style: none;
@@ -1202,11 +1202,11 @@ filter: blur(4px);
 	width: 350px;
 	filter: blur(4px);
 
-	-webkit-animation: fadein 2s 1s,blur 2s 2.5s; /* Safari, Chrome and Opera > 12.1 */
-		 -moz-animation: fadein 2s 1s,blur 2s 2.5s; /* Firefox < 16 */
-			-ms-animation: fadein 2s 1s,blur 2s 2.5s; /* Internet Explorer */
-			 -o-animation: fadein 2s 1s,blur 2s 2.5s; /* Opera < 12.1 */
-					animation: fadein 2s 1s,blur 2s 2.5s;
+	-webkit-animation: fadein 2s 1s; /* Safari, Chrome and Opera > 12.1 */
+		 -moz-animation: fadein 2s 1s; /* Firefox < 16 */
+			-ms-animation: fadein 2s 1s; /* Internet Explorer */
+			 -o-animation: fadein 2s 1s; /* Opera < 12.1 */
+					animation: fadein 2s 1s;
 					animation-fill-mode: forwards;
 
 }
