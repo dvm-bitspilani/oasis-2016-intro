@@ -1231,7 +1231,7 @@ filter: blur(4px);
 	/*opacity: .85;*/
 	font-family:  'Poiret One', sans-serif;
 	font-size: 1em;
-	
+
 
 		-webkit-animation: fadein 2s 1s; /* Safari, Chrome and Opera > 12.1 */
 		 -moz-animation: fadein 2s 1s; /* Firefox < 16 */
@@ -1305,4 +1305,78 @@ to {right: -100px;}
 @-o-keyframes blur {
 	from { -o-filter: blur(0px); }
 	to   { -o-filter: blur(4px); }
+}
+
+
+#register{
+	background: url("../img/wood-sign2.png") no-repeat;
+	position: absolute;
+	width: 224px;
+	height: 100px;
+	background-size: contain;
+	left:65%;
+	top:-18px;
+	z-index: 30;
+}
+
+#register p{
+	margin: 0;
+	bottom: 13px;
+	position: absolute;
+	text-align: center;
+width: 100%;
+color: #e1ba53;
+text-shadow: 1px 2px black;
+}
+
+
+.loaderhoverslow
+{
+animation: swingslow 3s ease-in-out infinite;
+}
+
+
+@keyframes swingslow {
+0% {
+-webkit-transform: rotateZ(-3deg);
+-moz-transform: rotateZ(-3deg);
+-o-transform: rotateZ(-3deg);
+-ms-transform: rotateZ(-3deg);
+transform: rotateZ(-3deg);
+}
+50% {
+-webkit-transform: rotateZ(3deg);
+-moz-transform: rotateZ(3deg);
+-o-transform: rotateZ(3deg);
+-ms-transform: rotateZ(3deg);
+transform: rotateZ(3deg);
+}
+100% {
+-webkit-transform: rotateZ(-3deg);
+-moz-transform: rotateZ(-3deg);
+-o-transform: rotateZ(-3deg);
+-ms-transform: rotateZ(-3deg);
+transform: rotateZ(-3deg);
+}
+}
+
+@media screen and (max-width:694px) {
+	#register{
+		width: 180px;
+		left: calc(50% - 90px);
+	}
+	#register p{
+		bottom: 30px;
+	}
+}
+
+@media screen and (max-width:400px) {
+	#register{
+		width: 140px;
+		left: calc(50% - 70px);
+	}
+	#register p{
+		bottom: 43px;
+	font-size: 14px;
+	}
 }
