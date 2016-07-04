@@ -391,6 +391,12 @@ path{
 	font-size: 0.994em;
 }
 
+.about p{
+	margin:6px 0;
+	text-indent:28px;
+	font-size: 20.5px;
+}
+
 .description a{
 	text-decoration: none;
 	color: #362609;
@@ -825,7 +831,7 @@ display: block;
 #twitter{
 	background-image: url('../img/twitter.png');
 	-webkit-transition: all 0.2s;
-	-o-transition: all 0.2s;
+	-o-trcontatctansition: all 0.2s;
 		transition: all 0.2s;
 
 }
@@ -981,7 +987,7 @@ display: block;
 }
 
 .contact{
-	margin:13px 16px;
+	margin: 10px 13px;
 	z-index: 15;
 	display: block;
 	cursor: pointer;
