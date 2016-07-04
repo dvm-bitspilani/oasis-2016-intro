@@ -82,7 +82,7 @@
 		<div id="socialBox">
 			<div class="socialIcon">
 				<a href="https://www.facebook.com/oasis.bitspilani" target="_blank">
-				<div id="fb"class="innerBox" >
+				<div id="fb" class="innerBox" >
 				</div>
 				</a>
 			</div>
@@ -171,6 +171,7 @@
 					<p><span class="description"><a href="#page/6">Contacts</a></span><span class="dots">...........................................................................................</span><span class="pNo">10</span></p>
 					<p><span class="description"><a href="#page/8">Sponsors</a></span><span class="dots">...........................................................................................</span><span class="pNo">12</span></p>
 					<p><span class="description"><a href="#page/16">Videos</a></span><span class="dots">...........................................................................................</span><span class="pNo">14</span></p>
+
 				</div>
 				<img class="logo" src="img/logo.png" />
 			</div></div>
@@ -701,7 +702,7 @@ $(window).bind('keydown', function(e){
 // });
 // 	$("#flipbook").bind("first", function(event, page, view) {
 //
-// 		console.log('page 1');
+		// console.log('page 1');
 //
 // 	});
 
@@ -779,7 +780,7 @@ setTimeout(function(){
 		var descWidth=$(element).children('.description').outerWidth();
 		var pNoWidth=$(element).children('.pNo').width();
 		var $dots=$(element).children('.dots');
-		console.log(paraWidth,descWidth,pNoWidth);
+		// console.log(paraWidth,descWidth,pNoWidth);
 		var dotsWidth=paraWidth-(descWidth+pNoWidth+2);
 		$dots.width(dotsWidth+"px");
 	});
@@ -835,13 +836,13 @@ setInterval( function() {
 }, 900 );
 
 var $overlay = $('<div class="overlay"></div>');
-console.log("hi");
+// console.log("hi");
 
 $('.thumbnailImg img').css("z-index","15");
 
 function video(ele) {
 
-	console.log("hi");
+	// console.log("hi");
 	// e.preventDefault();
 
 	// get video id from href (assumes v is last url param)
@@ -863,6 +864,10 @@ function video(ele) {
 $overlay.click( function() {
 	$(this).detach().empty();
 });
+
+	console.clear();
+	console.log("%c \n\n\n\xa9  Department of Visual Media, BITS Pilani", 'font-size: 15px; font-weight: bold; font-family: Arial');
+	console.log("Covered under GNU General Public License as published by the Free Software Foundation");
 
 
 </script>
