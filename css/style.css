@@ -380,7 +380,7 @@ path{
 }
 
 .tBody {
-	font-family:'Harry P';
+	font-family:'Poiret One', sans-serif;
 	color: #362609;
 	/*position: relative;*/
 	width: 85%;
@@ -394,7 +394,9 @@ path{
 .about p{
 	margin:6px 0;
 	text-indent:28px;
-	font-size: 20.5px;
+	font-size: 16px;
+	font-weight:bold;
+	
 }
 
 .description a{
