@@ -29,7 +29,7 @@
 	<meta property="og:site_name" content="OASIS Website" />
 	<meta property="og:url" content="http://www.bits-oasis.org/" />
 	<meta property="og:description" content="Get ready to dive into mankind's eternal fascinations. Get ready to unravel the mysteries of culture. Get ready to be awed by the legends of the old and the new, ‘cause this October, BITS Pilani brings to you one of India’s largest cultural fests of the modern era – OASIS ’16, OF GODS AND MEN | 19th - 23rd October | Be There" />
-	<meta property="og:image" content="http://bits-oasis.org/2016intro/img/ogimage.png" />
+	<meta property="og:image" content="http://bits-oasis.org/img/fbshare.jpg" />
 	<meta property="og:type" content="website" />
 </head>
 <body>
@@ -214,7 +214,7 @@
 					</div>
 					<div class="contact">
 						<div class="innerContainer">
-							<p>Nalin Mujumdar<br> Stage Controls<br> stagecontrols&nbsp[at]&nbspbits-oasis&nbsp[dot]&nbsporg<br> Ph : null</p>
+							<p>Nalin Mujumdar<br> Stage Controls<br> stagecontrols&nbsp[at]&nbspbits-oasis&nbsp[dot]&nbsporg<br> Ph : 8504001914</p>
 						</div>
 					</div>
 					<div class="contact">
@@ -548,7 +548,7 @@ $('#magazine').turn({
 					$('#magazine').css("right","");
 				}
 
-				else if(page==14){
+				else if(page==18){
 
 					$('#magazine').css("right",(($(window).width() - $('#magazine').outerWidth()*1.5) / 2) + $(window).scrollLeft()  + "px");
 					$('#magazine').css("left","");
@@ -566,14 +566,14 @@ $('#magazine').turn({
 
 			}
 
-			if(page==1 || page == 14 )
+			if(page==1 || page == 18 )
 				$('.overlay').css('opacity','0');
 			if(page==1){
 				$('#leftControl').addClass('disabled');
 				$('#rightControl').removeClass('disabled');
 
 			}
-			else if(page==14){
+			else if(page==18){
 				$('#rightControl').addClass('disabled');
 				$('#leftControl').removeClass('disabled');
 
@@ -731,7 +731,7 @@ $('#month').html(monthNames[d.getMonth()]);
 
 // Progress Bar Width
 var compdate= new Date("2016-05-01");
-var oasisdate= new Date("2016-10-19");
+var oasisdate= new Date("2016-10-20");
 var width = 100-(oasisdate-d)/(oasisdate-compdate)*100;
 width = String(width)+'%';
 $('#bar2').css('width', width);
@@ -765,7 +765,7 @@ $('#days span').html(daysRem);
 	if($('#magazine').turn('page')==1){
 		$('#leftControl').addClass('disabled');
 	}
-	if($('#magazine').turn('page')==14){
+	if($('#magazine').turn('page')==18){
 		$('#rightControl').addClass('disabled');
 	}
 
