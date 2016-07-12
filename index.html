@@ -22,7 +22,7 @@
     <meta name="rating" content="general">
     <meta name="distribution" content="Global">
     <meta name="revisit-after" content="1 days">
-	<meta name="google-site-verification" content="L5xTjsQ2T-Y-zP-H60AtkwZlKmqZBKRTRsZzV7LUsiA">
+	<meta name="google-site-verification" content="27wdEH_BewhaCUC8-dUDeSZtwjjN4m0L8AbzyS8Q3ko">
 
 	<!-- OPEN GRAPH META DATA-->
   <meta property="og:title" content="OASIS 2016 | Of Gods And Men | BITS Pilani" />
@@ -429,7 +429,9 @@ function border(){
 	$(".inborder").css('height', bHeight-30);
 
 	$(".dashing:nth-of-type(2),.dashing:nth-of-type(4)").css('height',bWidth-30);
-	$(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',$(".dashing:nth-of-type(2) i").width()*2);
+	// $(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',$(".dashing:nth-of-type(2) i").width()*2);
+	$(".dashing:nth-of-type(2) i,.dashing:nth-of-type(4) i").css('width',5*(bHeight-30));
+	$(".dashing:nth-of-type(4) i").css('left',(bHeight-30));
 
 }
 
@@ -744,7 +746,8 @@ $('#days span').html(daysRem);
 
 //
 // //initial center magazine
-(function(){
+
+function reSet(){
 
 	$('#magazine').css("position","absolute");
 	//
@@ -759,8 +762,8 @@ $('#days span').html(daysRem);
 	else{
 		$('#magazine').css("left",(($(window).width() - ($('#magazine').outerWidth())) / 2) + $(window).scrollLeft() + "px");
 		$('#magazine').addClass('smlScreenTransition');
-		$('#logoMain img').css("height",$('#magazine').offset().top-48);
-		$('#logoMain img').css("width","");
+		$('#logoMain').css("height",$('#magazine').offset().top-48);
+		$('#logoMain ').css("width","");
 	}
 	if($('#magazine').turn('page')==1){
 		$('#leftControl').addClass('disabled');
@@ -770,7 +773,11 @@ $('#days span').html(daysRem);
 	}
 
 
-})();
+};
+
+reSet();
+
+$(window).resize(reSet);
 
 
 //dots filler in content page

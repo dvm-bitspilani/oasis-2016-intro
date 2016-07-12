@@ -112,7 +112,7 @@ body{
 }
 
 .dashing:nth-of-type(1) i,.dashing:nth-of-type(3) i{
-	animation: slideDash 25s infinite linear;
+	animation: slideDash 50s infinite linear;
 }
 
 @keyframes slideDash {
@@ -396,7 +396,7 @@ path{
 	text-indent:28px;
 	font-size: 16px;
 	font-weight:bold;
-	
+
 }
 
 .description a{
@@ -570,7 +570,7 @@ path{
 	position: absolute;
 	width:20%;
 	left:45px;
-	top:45px;
+	top:42px;
 	/*float: left;*/
 	/*display: inline-block;*/
 }
